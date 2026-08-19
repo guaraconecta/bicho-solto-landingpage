@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petshop Design System — Motion & Transitions Edition</title>
+<title>Petshop Design System — Edição de Animações e Grafia pt-BR</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 <script>
@@ -26,7 +26,6 @@ tailwind.config = {
         areiaEscura: '#D4C4A8',
         cinzaPet: '#9B8B7A',
         pageBg: '#EDE5D8',
-        // Dark theme additions
         darkBg: '#1A1410',
         darkCard: '#261D17',
         darkSurface: '#33261F',
@@ -159,7 +158,7 @@ tailwind.config = {
     box-shadow: 0 12px 28px rgba(198,107,61,0.3); 
   }
 
-  /* Service Card Lift & Magnetic Ripple */
+  /* Service Card Lift */
   .service-card { 
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease, border-color 0.3s ease; 
   }
@@ -169,7 +168,7 @@ tailwind.config = {
     border-color: rgba(198,107,61,0.5);
   }
 
-  /* Product Card 3D Lift & Shine Effect */
+  /* Product Card 3D Lift */
   .product-card { 
     transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease; 
     position: relative;
@@ -312,30 +311,30 @@ tailwind.config = {
       <div class="w-8 h-8 rounded-lg bg-terracota flex items-center justify-center text-white font-bold font-display">🐾</div>
       <div>
         <span class="font-display font-bold text-lg leading-none block">Petshop Design System</span>
-        <span class="font-body text-[11px] text-terracota uppercase tracking-widest font-semibold">v2.0 Motion &amp; Transitions</span>
+        <span class="font-body text-[11px] text-terracota uppercase tracking-widest font-semibold">v2.0 Animações e Norma pt-BR</span>
       </div>
     </div>
     
     <div class="flex items-center gap-3">
       <!-- Quick Nav Links -->
       <nav class="hidden md:flex items-center gap-4 text-xs uppercase tracking-wider font-bold text-cinzaPet">
-        <a href="#hero" class="hover:text-terracota transition-colors">Hero</a>
-        <a href="#motion-system" class="hover:text-terracota transition-colors text-terracota font-extrabold">★ Transições</a>
+        <a href="#hero" class="hover:text-terracota transition-colors">Início</a>
+        <a href="#normas-grafia" class="hover:text-terracota transition-colors text-terracota font-extrabold">★ Normas pt-BR</a>
+        <a href="#motion-system" class="hover:text-terracota transition-colors">Animações</a>
         <a href="#tokens" class="hover:text-terracota transition-colors">Tokens</a>
         <a href="#componentes" class="hover:text-terracota transition-colors">Componentes</a>
-        <a href="#interativo" class="hover:text-terracota transition-colors">Demos</a>
-        <a href="#dobras" class="hover:text-terracota transition-colors">Dobras</a>
+        <a href="#interativo" class="hover:text-terracota transition-colors">Demonstrações</a>
       </nav>
 
       <!-- Theme Switcher Button -->
       <button id="themeToggle" onclick="toggleTheme()" class="flex items-center gap-2 bg-areia/50 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-1.5 rounded-full text-xs font-bold transition-all hover:scale-105 active:scale-95">
         <span id="themeIcon">🌙</span>
-        <span id="themeLabel" class="hidden sm:inline">Modo Escuro</span>
+        <span id="themeLabel" class="hidden sm:inline">Modo escuro</span>
       </button>
 
       <!-- Trigger Modal Button -->
       <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-4 py-1.5 rounded-full font-body font-bold text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-1.5">
-        <span>Testar Modal</span>
+        <span>Testar modal</span>
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </button>
     </div>
@@ -352,28 +351,28 @@ tailwind.config = {
         <div class="scroll-reveal-left">
           <div class="flex items-center gap-3 mb-6">
             <div class="w-12 h-px bg-terracota"></div>
-            <span class="font-body text-terracota text-xs uppercase tracking-[0.3em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Motion &amp; Transitions v2.0</span>
+            <span class="font-body text-terracota text-xs uppercase tracking-[0.3em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Animações e Grafia pt-BR v2.0</span>
           </div>
           <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-6 font-bold tracking-tight">
             Petshop<br>
             <span class="text-terracota italic font-normal">Design</span> System
           </h1>
           <p class="font-body text-lg text-cinzaPet dark:text-areiaEscura mb-8 max-w-md leading-relaxed">
-            Sistema visual e interativo completo para landing pages petshop. Agora com <strong class="text-terracota font-bold">transições fluidas, micro-interações responsivas, visualização 3D de cards e modal moderno com `@starting-style`</strong>.
+            Sistema visual e interativo completo para landing pages de petshops. Agora adaptado para o <strong class="text-terracota font-bold">Português do Brasil (norma culta e ABNT), sem anglicismos desnecessários e sem caixa alta em todas as palavras (Title Case)</strong>.
           </p>
           <div class="flex flex-wrap gap-4 items-center">
-            <button onclick="scrollToSection('motion-system')" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-laranjaHover flex items-center gap-2">
-              <span>Ver Sistema de Transições</span>
+            <button onclick="scrollToSection('normas-grafia')" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-laranjaHover flex items-center gap-2">
+              <span>Ver normas de grafia pt-BR</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
             </button>
             <button onclick="openBookingModal()" class="btn-primary bg-terracota text-white px-8 py-4 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-terracotaHover">
-              Testar Agendamento Live
+              Testar agendamento ao vivo
             </button>
           </div>
           <!-- Trust Badge with Spring Motion -->
           <div class="flex items-center gap-4 mt-10 p-3 rounded-2xl bg-white/60 dark:bg-darkSurface/60 border border-areiaEscura/30 dark:border-terracota/20 max-w-sm backdrop-blur-sm shadow-sm">
             <div class="w-4 h-4 rounded-full bg-verdePet badge-bounce flex-shrink-0"></div>
-            <span class="font-body text-sm font-semibold">Pet Friendly · Transições a 60fps · Acessível</span>
+            <span class="font-body text-sm font-semibold">Pet friendly · Grafia pt-BR ABNT · 60fps</span>
           </div>
         </div>
 
@@ -398,9 +397,9 @@ tailwind.config = {
                     <ellipse cx="54" cy="40" rx="4" ry="5"/>
                   </svg>
                 </div>
-                <p class="font-display text-2xl text-terracota font-bold mb-1">Pet Boutique</p>
+                <p class="font-display text-2xl text-terracota font-bold mb-1">Pet boutique</p>
                 <div class="separator-terracota w-24 mx-auto mb-3"></div>
-                <p class="font-body text-xs text-cinzaPet uppercase tracking-[0.25em] font-semibold">Motion &amp; Visual System</p>
+                <p class="font-body text-xs text-cinzaPet uppercase tracking-[0.25em] font-semibold">Animações e sistema visual</p>
                 <p class="font-detalhe text-xl text-terracota mt-2">Clique no ícone para interagir!</p>
               </div>
             </div>
@@ -410,11 +409,11 @@ tailwind.config = {
           <div class="absolute -bottom-4 -right-4 bg-white dark:bg-darkCard rounded-card p-4 shadow-xl border border-areiaEscura/30 dark:border-terracota/30 badge-bounce backdrop-blur-sm">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-laranjaVibrante/15 flex items-center justify-center text-laranjaVibrante font-bold text-lg">
-                🚀
+                🇧🇷
               </div>
               <div>
-                <p class="font-body text-sm font-bold">+60 FPS</p>
-                <p class="font-body text-xs text-cinzaPet">Transições Fluídas</p>
+                <p class="font-body text-sm font-bold">Português pt-BR</p>
+                <p class="font-body text-xs text-cinzaPet">Norma Culta &amp; ABNT</p>
               </div>
             </div>
           </div>
@@ -423,7 +422,7 @@ tailwind.config = {
           <div class="absolute -top-4 -left-4 bg-white dark:bg-darkCard rounded-card p-3 shadow-lg border border-areiaEscura/30 dark:border-terracota/30 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
             <span class="font-body text-xs font-extrabold text-verdePet flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-verdePet animate-ping"></span>
-              Spring Timing Ready
+              Sem Anglicismos
             </span>
           </div>
         </div>
@@ -434,18 +433,61 @@ tailwind.config = {
 
 
 <!-- ============================ -->
-<!-- 2. SISTEMA DE TRANSIÇÕES (NEW SPECIAL SECTION) -->
+<!-- NOVO: NORMAS DE GRAFIA PT-BR & ABNT -->
+<!-- ============================ -->
+<section id="normas-grafia" class="py-6 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-12 border border-areiaEscura/30 dark:border-terracota/20">
+    <div class="flex items-center gap-3 mb-6 scroll-reveal">
+      <span class="font-display text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">REGRA OFICIAL DE GRAFIA &amp; ABNT</span>
+      <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+      <h2 class="font-display text-3xl font-bold">Diretrizes de Redação e Grafia pt-BR</h2>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6 text-sm">
+      <div class="bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20">
+        <h4 class="font-display font-bold text-lg text-terracota mb-2">1. Caixa baixa em títulos (Sem Title Case)</h4>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura leading-relaxed">
+          Em português do Brasil (norma culta e ABNT NBR 6023/10520), os títulos e frases usam apenas a primeira letra maiúscula (Sentence Case). A capitalização de todas as palavras é um anglicismo incorreto comum em IAs.
+        </p>
+        <div class="mt-3 p-2 bg-verdePet/10 text-verdePet font-bold text-xs rounded">✓ Quem já passou por aqui aprova</div>
+        <div class="mt-1 p-2 bg-red-500/10 text-red-500 font-bold text-xs rounded line-through">✕ Quem Já Passou Por Aqui Aprova</div>
+      </div>
+
+      <div class="bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20">
+        <h4 class="font-display font-bold text-lg text-terracota mb-2">2. Eliminação de anglicismos</h4>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura leading-relaxed">
+          Substituição de estrangeirismo não adaptado por termos nativos e naturais do Português do Brasil.
+        </p>
+        <div class="mt-3 p-2 bg-verdePet/10 text-verdePet font-bold text-xs rounded">✓ Táxi Pet (busca e entrega) / Xampu</div>
+        <div class="mt-1 p-2 bg-red-500/10 text-red-500 font-bold text-xs rounded line-through">✕ Taxi Pet Pickup / Highly</div>
+      </div>
+
+      <div class="bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20">
+        <h4 class="font-display font-bold text-lg text-terracota mb-2">3. Acentuação e pontuação gramatical</h4>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura leading-relaxed">
+          Revisão ortográfica rigorosa obedecendo ao Acordo Ortográfico vigente (acentuação gráfica obrigatória em palavras como táxi, saúde, horário, vacinação).
+        </p>
+        <div class="mt-3 p-2 bg-verdePet/10 text-verdePet font-bold text-xs rounded">✓ Táxi, horário, vacinação, serviço</div>
+        <div class="mt-1 p-2 bg-red-500/10 text-red-500 font-bold text-xs rounded line-through">✕ Taxi, horario, vacinacao</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 2. SISTEMA DE TRANSIÇÕES     -->
 <!-- ============================ -->
 <section id="motion-system" class="py-6 px-4 md:px-[2cm]">
   <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="flex items-center gap-3 mb-4 scroll-reveal">
-      <span class="font-display text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full">NOVO RECURSO</span>
+      <span class="font-display text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full">RECURSO DE ANIMAÇÃO</span>
       <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
-      <h2 class="font-display text-3xl md:text-4xl font-bold">01. Sistema de Transições &amp; Motion Design</h2>
+      <h2 class="font-display text-3xl md:text-4xl font-bold">02. Sistema de transições e animação visual</h2>
     </div>
     
     <p class="font-body text-base text-cinzaPet dark:text-areiaEscura mb-10 max-w-3xl scroll-reveal">
-      Para tornar o site petshop dinâmico e amigável sem perder o tom profissional, definimos 6 padrões fundamentais de animação CSS e JavaScript. Teste cada efeito ao passar o mouse ou clicar nos cards abaixo:
+      Para tornar o site dinâmico e amigável sem perder o tom profissional, definimos 6 padrões fundamentais de animação CSS e JavaScript. Teste cada efeito ao passar o mouse ou clicar nos cartões abaixo:
     </p>
 
     <div class="grid md:grid-cols-3 gap-6">
@@ -453,77 +495,77 @@ tailwind.config = {
       <!-- Motion Token 1: Spring Bounce -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group hover:border-terracota transition-all duration-300">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">1. Spring Bounce</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">1. Rebatimento suave (Spring)</span>
           <span class="font-body text-xs font-mono text-terracota">cubic-bezier(0.34, 1.56, 0.64, 1)</span>
         </div>
         <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center cursor-pointer overflow-hidden p-4">
           <button class="bg-terracota text-white px-5 py-2.5 rounded-xl font-bold text-sm transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-1" style="transition-timing-function: var(--ease-spring);">
-            Passe o mouse! 🐾
+            Passe o cursor! 🐾
           </button>
         </div>
-        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Usado em botões CTA, badges e cards ao passar o mouse. Dá um feedback visual orgânico e simpático.</p>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Usado em botões de ação e selos. Proporciona resposta tátil orgânica e agradável.</p>
       </div>
 
       <!-- Motion Token 2: Glass Shine / Lift -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group hover:border-laranjaVibrante transition-all duration-300">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">2. Card Lift &amp; Shine</span>
-          <span class="font-body text-xs font-mono text-laranjaVibrante">translateY(-8px) + skew shine</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">2. Elevação e brilho</span>
+          <span class="font-body text-xs font-mono text-laranjaVibrante">translateY(-8px)</span>
         </div>
         <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center cursor-pointer product-card p-4">
           <div class="text-center">
-            <span class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente block">Ração Premium</span>
-            <span class="font-body text-xs text-laranjaVibrante font-bold">Efeito Brilho Diagonal</span>
+            <span class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente block">Ração especial</span>
+            <span class="font-body text-xs text-laranjaVibrante font-bold">Efeito de brilho diagonal</span>
           </div>
         </div>
-        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Reflexo de luz suave ao passar o cursor pelos produtos da loja online.</p>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Reflexo de luz suave ao passar o cursor pelos produtos do catálogo.</p>
       </div>
 
       <!-- Motion Token 3: Smooth Accordion & Drawer -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group hover:border-verdePet transition-all duration-300">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">3. Accordion &amp; Expand</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">3. Expansão de sanfona</span>
           <span class="font-body text-xs font-mono text-verdePet">grid-template-rows 0.4s</span>
         </div>
         <div class="bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 p-4">
           <button onclick="toggleAccordion('acc-demo')" class="w-full flex items-center justify-between font-bold text-sm text-left">
-            <span>Dúvida frequente?</span>
+            <span>Pergunta frequente?</span>
             <span id="acc-icon" class="text-terracota transition-transform duration-300">▼</span>
           </button>
           <div id="acc-demo" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out overflow-hidden">
             <div class="overflow-hidden pt-2 font-body text-xs text-cinzaPet">
-              O agendamento de banho pode ser feito em poucos cliques pelo site ou WhatsApp 24h.
+              O agendamento de banho pode ser feito em poucos cliques pelo site ou WhatsApp.
             </div>
           </div>
         </div>
-        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Expansão fluída sem quebra de layout para seção de perguntas frequentes.</p>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Expansão fluída sem quebra de layout para a seção de dúvidas.</p>
       </div>
 
       <!-- Motion Token 4: Skeleton Shimmer Loading -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">4. Skeleton Shimmer</span>
-          <span class="font-body text-xs font-mono text-terracota">1.8s infinite loop</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">4. Carregamento suave</span>
+          <span class="font-body text-xs font-mono text-terracota">1.8s loop infinito</span>
         </div>
         <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 p-4 flex flex-col gap-3 justify-center">
           <div class="h-4 w-3/4 skeleton-shimmer rounded-full"></div>
           <div class="h-3 w-1/2 skeleton-shimmer rounded-full"></div>
           <div class="h-8 w-28 skeleton-shimmer rounded-xl mt-1"></div>
         </div>
-        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Carregamento suave para imagens de galeria e catálogo de produtos.</p>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Efeito visual de carregamento prévio para fotos da galeria.</p>
       </div>
 
       <!-- Motion Token 5: Magnetic Pulse Badge -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">5. Pulse &amp; Float</span>
-          <span class="font-body text-xs font-mono text-verdePet">2.5s pulseGlow</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">5. Pulsação e flutuação</span>
+          <span class="font-body text-xs font-mono text-verdePet">2.5s pulso contínuo</span>
         </div>
         <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center gap-3">
           <div class="w-10 h-10 rounded-full bg-verdePet/20 flex items-center justify-center pulse-glow">
             <span class="w-4 h-4 rounded-full bg-verdePet"></span>
           </div>
-          <span class="font-body text-sm font-bold">Atendimento Vet 24h</span>
+          <span class="font-body text-sm font-bold">Atendimento veterinário</span>
         </div>
         <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Transmite urgência positiva e confiança para plantões veterinários.</p>
       </div>
@@ -531,15 +573,15 @@ tailwind.config = {
       <!-- Motion Token 6: Top-Layer Dialog Modern Exit -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">6. Top-Layer Modal</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">6. Modal em camada superior</span>
           <span class="font-body text-xs font-mono text-laranjaVibrante">@starting-style</span>
         </div>
         <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center p-4">
           <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider">
-            Abrir Modal Exemplo
+            Abrir modal de exemplo
           </button>
         </div>
-        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Entrada e saída suaves utilizando APIs modernas do navegador com fallback.</p>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Entrada e saída suaves utilizando a API nativa dialog do navegador.</p>
       </div>
 
     </div>
@@ -548,21 +590,21 @@ tailwind.config = {
 
 
 <!-- ============================ -->
-<!-- 3. DESIGN TOKENS ORIGINAL ENHANCED -->
+<!-- 3. DESIGN TOKENS ENHANCED    -->
 <!-- ============================ -->
 <section id="tokens" class="py-6 px-4 md:px-[2cm]">
   <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="flex items-center gap-3 mb-12 scroll-reveal">
-      <span class="number-friendly text-sm text-terracota font-bold">02</span>
+      <span class="number-friendly text-sm text-terracota font-bold">03</span>
       <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
-      <h2 class="font-display text-4xl font-bold">Design Tokens &amp; Componentes Base</h2>
+      <h2 class="font-display text-4xl font-bold">Tokens visuais e componentes base</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       
       <!-- Card Service Token -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:shadow-md transition-all duration-300">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">Service Card</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">Cartão de serviço</span>
           <button onclick="copyToClipboard('#C66B3D')" class="font-mono text-xs text-terracota hover:underline cursor-pointer">#C66B3D 📋</button>
         </div>
         <div class="h-24 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center px-4 gap-3 service-card cursor-pointer">
@@ -570,38 +612,38 @@ tailwind.config = {
             <svg class="w-6 h-6 icon-pet stroke-terracota" viewBox="0 0 24 24"><path d="M12 21s-6-4.5-6-9a6 6 0 0112 0c0 4.5-6 9-6 9z"/><circle cx="12" cy="12" r="2"/></svg>
           </div>
           <div>
-            <span class="font-body text-base font-bold block">Banho &amp; Tosa</span>
-            <span class="font-body text-xs text-cinzaPet">Lift: translateY(-8px)</span>
+            <span class="font-body text-base font-bold block">Banho e tosa</span>
+            <span class="font-body text-xs text-cinzaPet">Elevação: translateY(-8px)</span>
           </div>
         </div>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">Card de serviço com ícone line-art. Hover: elevação com curva spring terrosa.</p>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">Cartão de serviço com ícone em traço. Elevação suave ao passar o cursor.</p>
       </div>
 
       <!-- CTA Button Token -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:shadow-md transition-all duration-300">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">CTA Button</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">Botão de ação</span>
           <button onclick="copyToClipboard('#F4823C')" class="font-mono text-xs text-laranjaVibrante hover:underline cursor-pointer">#F4823C 📋</button>
         </div>
         <div class="h-24 flex items-center justify-center">
           <button onclick="showToast('🎉 Horário agendado!')" class="btn-cta bg-laranjaVibrante text-white px-6 py-3 rounded-xl font-body uppercase text-sm font-bold hover:bg-laranjaHover">
-            Agendar Banho
+            Agendar banho
           </button>
         </div>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">CTA principal em laranja vibrante. Feedback tátil ao clicar.</p>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">Botão principal em laranja vibrante. Resposta tátil imediata ao clique.</p>
       </div>
 
       <!-- Trust Badge Token -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:shadow-md transition-all duration-300">
         <div class="flex items-center justify-between mb-4">
-          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">Trust Badge</span>
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">Selo de confiança</span>
           <button onclick="copyToClipboard('#5C8A3A')" class="font-mono text-xs text-verdePet hover:underline cursor-pointer">#5C8A3A 📋</button>
         </div>
         <div class="h-24 flex items-center justify-center gap-2">
           <div class="w-3.5 h-3.5 rounded-full bg-verdePet badge-bounce"></div>
-          <span class="font-body text-sm font-bold">Vet 24h · Plantão</span>
+          <span class="font-body text-sm font-bold">Atendimento veterinário</span>
         </div>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">Selo de confiança com bounce suave. Transmite cuidado veterinário.</p>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">Selo de confiança com flutuação leve. Transmite cuidado e saúde.</p>
       </div>
 
     </div>
@@ -616,45 +658,45 @@ tailwind.config = {
   <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="relative z-10">
       <div class="flex items-center gap-3 mb-12 scroll-reveal">
-        <span class="number-friendly text-sm text-terracota font-bold">03</span>
+        <span class="number-friendly text-sm text-terracota font-bold">04</span>
         <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
-        <h2 class="font-display text-4xl font-bold">Tipografia &amp; Animação de Texto</h2>
+        <h2 class="font-display text-4xl font-bold">Tipografia e regras de texto</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="space-y-6">
           <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
             <div class="flex items-baseline justify-between mb-1">
-              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H1 — Display</span>
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H1 — Título principal</span>
               <span class="font-body text-xs text-terracota font-mono">Fraunces / 72px / 700</span>
             </div>
-            <p class="font-display text-5xl md:text-6xl leading-[1.05] font-bold hover:text-terracota transition-colors duration-300">Cuidado Pet</p>
+            <p class="font-display text-5xl md:text-6xl leading-[1.05] font-bold hover:text-terracota transition-colors duration-300">Cuidado pet</p>
           </div>
           <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
             <div class="flex items-baseline justify-between mb-1">
-              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H2 — Section</span>
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H2 — Título de seção</span>
               <span class="font-body text-xs text-terracota font-mono">Fraunces / 48px / 600</span>
             </div>
-            <p class="font-display text-3xl md:text-4xl leading-tight font-semibold">Nossos Serviços Especializados</p>
+            <p class="font-display text-3xl md:text-4xl leading-tight font-semibold">Nossos serviços especializados</p>
           </div>
           <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
             <div class="flex items-baseline justify-between mb-1">
-              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H3 — Subtitle</span>
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H3 — Subtítulo</span>
               <span class="font-body text-xs text-terracota font-mono">Fraunces / 28px / 500</span>
             </div>
-            <p class="font-display text-2xl text-terracota font-medium">Banho &amp; Tosa Premium</p>
+            <p class="font-display text-2xl text-terracota font-medium">Banho e tosa especial</p>
           </div>
         </div>
         <div class="space-y-6">
           <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
             <div class="flex items-baseline justify-between mb-1">
-              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Body Large</span>
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Texto corrido</span>
               <span class="font-body text-xs text-terracota font-mono">Nunito / 20px / 400</span>
             </div>
             <p class="font-body text-xl leading-relaxed">Cuidado completo para o seu melhor amigo com carinho e profissionalismo.</p>
           </div>
           <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
             <div class="flex items-baseline justify-between mb-1">
-              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Detalhe — Caveat Handcrafted</span>
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Detalhe — Manuscrito Caveat</span>
               <span class="font-body text-xs text-terracota font-mono">Caveat / 32px / 700</span>
             </div>
             <p class="font-detalhe text-4xl text-terracota font-bold transform -rotate-1 hover:rotate-1 transition-transform duration-300 inline-block cursor-default">
@@ -663,12 +705,12 @@ tailwind.config = {
           </div>
           <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
             <div class="flex items-baseline justify-between mb-1">
-              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Price — Highlight</span>
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Destaque de preço</span>
               <span class="font-body text-xs text-terracota font-mono">Nunito / 24px / 800</span>
             </div>
             <p class="font-body text-2xl text-laranjaVibrante font-extrabold flex items-center gap-2">
               <span>R$ 45,00</span>
-              <span class="text-xs bg-laranjaVibrante/10 text-laranjaVibrante px-2 py-0.5 rounded-full font-bold">Oferta Especial</span>
+              <span class="text-xs bg-laranjaVibrante/10 text-laranjaVibrante px-2 py-0.5 rounded-full font-bold">Oferta especial</span>
             </p>
           </div>
         </div>
@@ -685,23 +727,23 @@ tailwind.config = {
   <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="flex items-center justify-between mb-12 scroll-reveal">
       <div class="flex items-center gap-3">
-        <span class="number-friendly text-sm text-terracota font-bold">04</span>
+        <span class="number-friendly text-sm text-terracota font-bold">05</span>
         <div class="h-px w-16 bg-areiaEscura/40 dark:bg-terracota/20"></div>
-        <h2 class="font-display text-4xl font-bold">Cores &amp; Surfaces (Clique para Copiar)</h2>
+        <h2 class="font-display text-4xl font-bold">Cores e superfícies (Clique para copiar)</h2>
       </div>
-      <span class="text-xs font-body text-cinzaPet hidden sm:inline">Toque em qualquer cor para copiar o Hex</span>
+      <span class="text-xs font-body text-cinzaPet hidden sm:inline">Toque em qualquer cor para copiar a cor Hex</span>
     </div>
 
     <!-- Background Swatches -->
     <div class="mb-10 scroll-reveal">
-      <h3 class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold mb-4">Backgrounds &amp; Superfícies</h3>
+      <h3 class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold mb-4">Superfícies e fundos</h3>
       <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
         <div onclick="copyToClipboard('#FBF6EE')" class="group cursor-pointer">
           <div class="h-20 rounded-item bg-cremeQuente border border-areiaEscura/40 shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-end p-2">
             <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #FBF6EE</span>
           </div>
           <p class="font-body text-xs text-cinzaPet mt-2">#FBF6EE</p>
-          <p class="font-body text-xs font-bold">Creme Quente</p>
+          <p class="font-body text-xs font-bold">Creme quente</p>
         </div>
 
         <div onclick="copyToClipboard('#3D2B1F')" class="group cursor-pointer">
@@ -709,7 +751,7 @@ tailwind.config = {
             <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #3D2B1F</span>
           </div>
           <p class="font-body text-xs text-cinzaPet mt-2">#3D2B1F</p>
-          <p class="font-body text-xs font-bold">Marrom Pet</p>
+          <p class="font-body text-xs font-bold">Marrom pet</p>
         </div>
 
         <div onclick="copyToClipboard('#C66B3D')" class="group cursor-pointer">
@@ -725,7 +767,7 @@ tailwind.config = {
             <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #F4823C</span>
           </div>
           <p class="font-body text-xs text-cinzaPet mt-2">#F4823C</p>
-          <p class="font-body text-xs font-bold">Laranja Vibrante</p>
+          <p class="font-body text-xs font-bold">Laranja vibrante</p>
         </div>
 
         <div onclick="copyToClipboard('#5C8A3A')" class="group cursor-pointer">
@@ -733,7 +775,7 @@ tailwind.config = {
             <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #5C8A3A</span>
           </div>
           <p class="font-body text-xs text-cinzaPet mt-2">#5C8A3A</p>
-          <p class="font-body text-xs font-bold">Verde Pet</p>
+          <p class="font-body text-xs font-bold">Verde pet</p>
         </div>
       </div>
     </div>
@@ -748,16 +790,16 @@ tailwind.config = {
   <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="relative z-10">
       <div class="flex items-center gap-3 mb-12 scroll-reveal">
-        <span class="number-friendly text-sm text-terracota font-bold">05</span>
+        <span class="number-friendly text-sm text-terracota font-bold">06</span>
         <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
-        <h2 class="font-display text-4xl font-bold">Componentes UI &amp; Micro-interações</h2>
+        <h2 class="font-display text-4xl font-bold">Componentes de interface e interação</h2>
       </div>
 
       <!-- Interactive Filter Tabs -->
       <div class="mb-12 scroll-reveal">
-        <h3 class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold mb-4">Tabs de Navegação com Animação</h3>
+        <h3 class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold mb-4">Abas de navegação com animação</h3>
         <div class="flex flex-wrap gap-2 p-1.5 bg-white/70 dark:bg-darkSurface/70 rounded-full border border-areiaEscura/30 dark:border-terracota/20 max-w-xl">
-          <button onclick="switchTab(this, 'all')" class="tab-pill active px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Todos</button>
+          <button onclick="switchTab(this, 'all')" class="tab-pill active px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Todos os serviços</button>
           <button onclick="switchTab(this, 'caes')" class="tab-pill px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Cães 🐶</button>
           <button onclick="switchTab(this, 'gatos')" class="tab-pill px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Gatos 🐱</button>
           <button onclick="switchTab(this, 'vet')" class="tab-pill px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Veterinário 🏥</button>
@@ -773,10 +815,10 @@ tailwind.config = {
             <div class="w-12 h-12 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <svg class="w-7 h-7 icon-pet stroke-terracota" viewBox="0 0 24 24"><path d="M12 21s-6-4.5-6-9a6 6 0 0112 0c0 4.5-6 9-6 9z"/><circle cx="12" cy="12" r="2"/></svg>
             </div>
-            <span class="bg-terracota/10 text-terracota text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full">Cães &amp; Gatos</span>
+            <span class="bg-terracota/10 text-terracota text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full">Cães e gatos</span>
           </div>
-          <h4 class="font-display text-xl font-bold mb-2">Banho &amp; Tosa VIP</h4>
-          <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4">Shampoo hipoalergênico, secagem com ar morno e corte de unhas.</p>
+          <h4 class="font-display text-xl font-bold mb-2">Banho e tosa VIP</h4>
+          <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4">Xampu hipoalergênico, secagem morna e corte de unhas.</p>
           <div class="flex items-center justify-between">
             <span class="font-body text-xl text-laranjaVibrante font-extrabold">R$ 65,00</span>
             <button onclick="openBookingModal()" class="underline-warm font-body text-xs text-terracota uppercase font-bold">Agendar ➔</button>
@@ -794,7 +836,7 @@ tailwind.config = {
             </div>
           </div>
           <div class="p-5">
-            <h4 class="font-body text-base font-bold">Brinquedo Mordedor Soft</h4>
+            <h4 class="font-body text-base font-bold">Brinquedo mordedor macio</h4>
             <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-3">Borracha atóxica durável</p>
             <div class="flex items-center justify-between">
               <span class="font-body text-lg text-laranjaVibrante font-extrabold">R$ 39,90</span>
@@ -809,9 +851,9 @@ tailwind.config = {
             <div class="w-12 h-12 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <svg class="w-7 h-7 icon-pet stroke-verdePet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
-            <span class="bg-verdePet/10 text-verdePet text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full">Consulta Vet</span>
+            <span class="bg-verdePet/10 text-verdePet text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full">Consulta veterinária</span>
           </div>
-          <h4 class="font-display text-xl font-bold mb-2">Check-up Completo</h4>
+          <h4 class="font-display text-xl font-bold mb-2">Check-up completo</h4>
           <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4">Avaliação geral de saúde, exames rápidos e aplicação de vacinas.</p>
           <div class="flex items-center justify-between">
             <span class="font-body text-xl text-verdePet font-extrabold">R$ 120,00</span>
@@ -831,41 +873,41 @@ tailwind.config = {
 <section id="interativo" class="py-6 px-4 md:px-[2cm]">
   <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="flex items-center gap-3 mb-8 scroll-reveal">
-      <span class="number-friendly text-sm text-terracota font-bold">06</span>
+      <span class="number-friendly text-sm text-terracota font-bold">07</span>
       <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
-      <h2 class="font-display text-4xl font-bold">Componentes Interativos em Ação</h2>
+      <h2 class="font-display text-4xl font-bold">Componentes interativos em ação</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div class="space-y-6 scroll-reveal">
-        <h3 class="font-display text-2xl font-bold text-terracota">Modal Moderno com `@starting-style`</h3>
+        <h3 class="font-display text-2xl font-bold text-terracota">Modal moderno com `@starting-style`</h3>
         <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
           Nenhum plugin pesado é necessário. Usamos a API nativa `<dialog>` com transições discretas CSS para entrada e saída fluídas. Teste agora clicando no botão ao lado.
         </p>
         <div class="flex flex-wrap gap-4">
           <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-sm shadow-md">
-            Abrir Modal de Agendamento 🐾
+            Abrir modal de agendamento 🐾
           </button>
-          <button onclick="showToast('✨ Notificação Toast ativada!')" class="btn-primary bg-terracota text-white px-6 py-4 rounded-xl font-bold uppercase tracking-wider text-sm">
-            Testar Toast Feedback
+          <button onclick="showToast('✨ Notificação ativada com sucesso!')" class="btn-primary bg-terracota text-white px-6 py-4 rounded-xl font-bold uppercase tracking-wider text-sm">
+            Testar resposta visual (Toast)
           </button>
         </div>
       </div>
 
       <!-- Quick Interactive Form Preview -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
-        <h4 class="font-display text-lg font-bold mb-4">Input Focus Ring Spec</h4>
-        <form onsubmit="event.preventDefault(); showToast('👍 Formulário de exemplo submetido!');" class="space-y-4">
+        <h4 class="font-display text-lg font-bold mb-4">Campo de formulário interativo</h4>
+        <form onsubmit="event.preventDefault(); showToast('👍 Formulário de exemplo enviado!');" class="space-y-4">
           <div>
-            <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do Tutor</label>
+            <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do tutor</label>
             <input type="text" placeholder="Ex: Ana Silva" class="w-full bg-white dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota focus:ring-4 focus:ring-terracota/15 transition-all duration-300 font-body text-sm">
           </div>
           <div>
-            <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do Pet</label>
+            <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do pet</label>
             <input type="text" placeholder="Ex: Thor 🐶" class="w-full bg-white dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota focus:ring-4 focus:ring-terracota/15 transition-all duration-300 font-body text-sm">
           </div>
           <button type="submit" class="w-full btn-cta bg-terracota text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider">
-            Simular Envio
+            Simular envio
           </button>
         </form>
       </div>
@@ -880,37 +922,37 @@ tailwind.config = {
 <section id="dobras" class="py-6 px-4 md:px-[2cm]">
   <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-marromPet dark:bg-darkSurface rounded-dobra p-8 md:p-12 py-16 md:py-20 text-white shadow-xl transition-colors duration-400">
     <div class="flex items-center gap-3 mb-12 scroll-reveal">
-      <span class="number-friendly text-sm text-terracota font-bold">07</span>
+      <span class="number-friendly text-sm text-terracota font-bold">08</span>
       <div class="h-px flex-1 bg-white/20"></div>
-      <h2 class="font-display text-4xl font-bold text-white">Estrutura de Dobras &amp; Gatilhos de Scroll</h2>
+      <h2 class="font-display text-4xl font-bold text-white">Estrutura de dobras e gatilhos visuais</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-4">
       <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
         <span class="font-display text-3xl font-bold text-terracota/40">01</span>
         <div>
-          <h4 class="font-display text-lg font-bold text-white">Hero Split Screen</h4>
-          <p class="font-body text-xs text-areiaEscura mt-1">Dobra container com cantos rounded-dobra. Gatilhos: Float bounce no selo, paw-wiggle no ícone principal.</p>
+          <h4 class="font-display text-lg font-bold text-white">Dobra principal (Hero)</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Container com cantos arredondados. Animações de flutuação no selo e movimento leve na pata.</p>
         </div>
       </div>
       <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
         <span class="font-display text-3xl font-bold text-terracota/40">02</span>
         <div>
-          <h4 class="font-display text-lg font-bold text-white">Grid de Serviços</h4>
-          <p class="font-body text-xs text-areiaEscura mt-1">Grid de 3 colunas com elevação spring (-8px) ao passar o mouse e contorno terracota.</p>
+          <h4 class="font-display text-lg font-bold text-white">Grid de serviços</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Grade de 3 colunas com elevação orgânica ao passar o cursor e contorno destacado.</p>
         </div>
       </div>
       <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
         <span class="font-display text-3xl font-bold text-terracota/40">03</span>
         <div>
-          <h4 class="font-display text-lg font-bold text-white">Catálogo E-commerce</h4>
-          <p class="font-body text-xs text-areiaEscura mt-1">Tabs com animação de seleção fluída e efeito de brilho passar de luz (shine) nas imagens.</p>
+          <h4 class="font-display text-lg font-bold text-white">Catálogo de produtos</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Abas com animação de seleção fluída e efeito de brilho diagonal nas fotos dos produtos.</p>
         </div>
       </div>
       <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
         <span class="font-display text-3xl font-bold text-terracota/40">04</span>
         <div>
-          <h4 class="font-display text-lg font-bold text-white">Diferenciais &amp; Vet 24h</h4>
-          <p class="font-body text-xs text-areiaEscura mt-1">Badge com animação pulseGlow contínua transmitindo confiança veterinária instantânea.</p>
+          <h4 class="font-display text-lg font-bold text-white">Diferenciais e táxi pet</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Selo com pulsação contínua que transmite cuidado veterinário instantâneo.</p>
         </div>
       </div>
     </div>
@@ -925,11 +967,11 @@ tailwind.config = {
     <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
         <p class="font-display text-2xl font-bold">Petshop <span class="text-terracota italic">Design System</span></p>
-        <p class="font-body text-xs text-cinzaPet uppercase tracking-widest mt-1 font-semibold">v2.0 — Sistema Completo de Transições &amp; Efeitos Visual</p>
+        <p class="font-body text-xs text-cinzaPet uppercase tracking-widest mt-1 font-semibold">v2.0 — Animações e Norma pt-BR ABNT</p>
       </div>
       <div class="flex items-center gap-4">
         <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-primary bg-terracota text-white px-6 py-2.5 rounded-full font-body text-xs uppercase tracking-wider font-bold">
-          ↑ Voltar ao Topo
+          ↑ Voltar ao topo
         </button>
       </div>
     </div>
@@ -945,7 +987,7 @@ tailwind.config = {
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full bg-laranjaVibrante/20 flex items-center justify-center text-xl">🐾</div>
         <div>
-          <h3 class="font-display text-xl font-bold">Agendamento Rápido</h3>
+          <h3 class="font-display text-xl font-bold">Agendamento rápido</h3>
           <p class="font-body text-xs text-cinzaPet">Selecione o serviço para o seu pet</p>
         </div>
       </div>
@@ -954,11 +996,11 @@ tailwind.config = {
 
     <form onsubmit="event.preventDefault(); closeBookingModal(); showToast('🎉 Agendamento realizado com sucesso!');" class="space-y-4">
       <div>
-        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Serviço Desejado</label>
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Serviço desejado</label>
         <select class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
-          <option>Banho &amp; Tosa Completo</option>
-          <option>Consulta Veterinária Check-up</option>
-          <option>Tosa Higiênica + Hidratação</option>
+          <option>Banho e tosa completo</option>
+          <option>Consulta veterinária de rotina</option>
+          <option>Tosa higiênica e hidratação</option>
         </select>
       </div>
       <div class="grid grid-cols-2 gap-3">
@@ -972,7 +1014,7 @@ tailwind.config = {
         </div>
       </div>
       <button type="submit" class="w-full btn-cta bg-laranjaVibrante text-white py-3.5 rounded-xl font-bold uppercase text-sm tracking-wider shadow-md">
-        Confirmar Agendamento 🐾
+        Confirmar agendamento 🐾
       </button>
     </form>
   </div>
@@ -1006,7 +1048,7 @@ tailwind.config = {
     const htmlEl = document.documentElement;
     const isDark = htmlEl.classList.toggle('dark');
     document.getElementById('themeIcon').textContent = isDark ? '☀️' : '🌙';
-    document.getElementById('themeLabel').textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
+    document.getElementById('themeLabel').textContent = isDark ? 'Modo claro' : 'Modo escuro';
     showToast(isDark ? '🌙 Modo escuro ativado!' : '☀️ Modo claro ativado!');
   }
 
