@@ -218,8 +218,8 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- HEADER NAVEGAÇÃO              -->
 <!-- ============================ -->
-<header class="sticky top-0 z-50 bg-cremeQuente/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-areiaEscura/30 dark:border-terracota/20 px-4 py-3.5 transition-colors duration-300">
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+<header class="sticky top-0 z-50 bg-cremeQuente/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-areiaEscura/30 dark:border-terracota/20 px-4 md:px-[2cm] py-3.5 transition-colors duration-300">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto flex items-center justify-between gap-4">
     <a href="#home" class="flex items-center gap-3 group">
       <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center text-white font-bold font-display shadow-md group-hover:scale-105 transition-transform">BS</div>
       <div>
@@ -257,9 +257,9 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 1. HERO SECTION NOVO LAYOUT  -->
 <!-- ============================ -->
-<section id="home" class="py-6 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra overflow-hidden shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern relative transition-colors duration-400">
-    <div class="relative z-10 min-h-[82vh] flex items-center px-6 md:px-12 py-12 md:py-16">
+<section id="home" class="py-6 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra overflow-hidden shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern relative transition-colors duration-400">
+    <div class="relative z-10 min-h-[82vh] flex items-center px-6 md:px-12 lg:px-16 py-12 md:py-16">
       <div class="w-full grid lg:grid-cols-12 gap-12 items-center">
         
         <!-- Text Column (Left) -->
@@ -275,7 +275,7 @@ tailwind.config = {
           </h1>
 
           <p class="font-body text-base md:text-lg text-cinzaPet dark:text-areiaEscura mb-8 max-w-2xl leading-relaxed">
-            Na <strong>Bicho Solto Animal Care</strong>, seu pet é atendido com paciência, produtos naturais hipoalergênicos e equipe highly especializada. Oferecemos banho, tosa, vacinação e seleção de produtos selecionados no bairro Glória.
+            Na <strong>Bicho Solto Animal Care</strong>, seu pet é atendido com paciência, produtos naturais hipoalergênicos e equipe altamente especializada. Oferecemos banho, tosa, vacinação e seleção de produtos selecionados no bairro Glória.
           </p>
 
           <!-- Buttons CTAs -->
@@ -368,8 +368,8 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 2. CALCULADORA INTERATIVA    -->
 <!-- ============================ -->
-<section id="calculadora" class="py-6 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-14 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="calculadora" class="py-6 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-14 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
     <div class="text-center max-w-2xl mx-auto mb-10 scroll-reveal">
       <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Simulador de Valores</span>
@@ -377,7 +377,7 @@ tailwind.config = {
       <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-2">Escolha o porte do pet e o serviço desejado para estimar o valor instantaneamente:</p>
     </div>
 
-    <div class="max-w-3xl mx-auto bg-cremeQuente dark:bg-darkSurface p-6 md:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+    <div class="max-w-4xl mx-auto bg-cremeQuente dark:bg-darkSurface p-6 md:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
       
       <!-- Step 1: Porte -->
       <div class="mb-6">
@@ -448,8 +448,8 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 3. SERVIÇOS DO BICHO SOLTO   -->
 <!-- ============================ -->
-<section id="servicos" class="py-6 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="servicos" class="py-6 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
     <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 scroll-reveal gap-4">
       <div>
@@ -467,10 +467,10 @@ tailwind.config = {
     </div>
 
     <!-- Cards Grid -->
-    <div id="cardsGrid" class="grid md:grid-cols-3 gap-6">
+    <div id="cardsGrid" class="grid md:grid-cols-3 gap-8">
 
       <!-- Card 1: Banho & Tosa -->
-      <div class="card-item estetica service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+      <div class="card-item estetica service-card bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
         <div class="flex items-center justify-between mb-4">
           <div class="w-12 h-12 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform">
             <svg class="w-7 h-7 stroke-terracota icon-pet" viewBox="0 0 24 24"><path d="M6 6L18 18M6 18L18 6"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
@@ -491,7 +491,7 @@ tailwind.config = {
       </div>
 
       <!-- Card 2: Vacinação & Vermifugação -->
-      <div class="card-item saude service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+      <div class="card-item saude service-card bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
         <div class="flex items-center justify-between mb-4">
           <div class="w-12 h-12 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform">
             <svg class="w-7 h-7 stroke-verdePet icon-pet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -512,7 +512,7 @@ tailwind.config = {
       </div>
 
       <!-- Card 3: Pet Shop & Acessórios -->
-      <div class="card-item produtos service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+      <div class="card-item produtos service-card bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
         <div class="flex items-center justify-between mb-4">
           <div class="w-12 h-12 rounded-item bg-laranjaVibrante/10 flex items-center justify-center group-hover:scale-110 transition-transform">
             <svg class="w-7 h-7 stroke-laranjaVibrante icon-pet" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.7a2 2 0 0 0-.4-1.2l-2-2.7A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
@@ -540,8 +540,8 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 4. DIFERENCIAIS EXCLUSIVOS   -->
 <!-- ============================ -->
-<section id="diferenciais" class="py-6 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="diferenciais" class="py-6 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
     <div class="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
       <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Por que escolher o Bicho Solto?</span>
@@ -592,8 +592,8 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 5. AVALIAÇÕES DO GOOGLE      -->
 <!-- ============================ -->
-<section id="depoimentos" class="py-6 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="depoimentos" class="py-6 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="relative z-10">
       
       <div class="text-center max-w-2xl mx-auto mb-12 scroll-reveal">
@@ -608,7 +608,7 @@ tailwind.config = {
       </div>
 
       <!-- Testimonials Grid -->
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         
         <blockquote class="bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
           <div class="text-mostarda text-xl mb-3">★★★★★</div>
@@ -642,8 +642,8 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 6. LOCALIZAÇÃO E CONTATO     -->
 <!-- ============================ -->
-<section id="contato" class="py-6 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="contato" class="py-6 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
     <div class="grid md:grid-cols-2 gap-12 items-center">
       
@@ -695,7 +695,7 @@ tailwind.config = {
             </div>
             <h3 class="font-display text-2xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Bicho Solto Animal Care</h3>
             <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-6 max-w-xs mx-auto">
-              Localização privileged no bairro Glória em Joinville. Fácil estacionamento e acesso.
+              Localização privilegiada no bairro Glória em Joinville. Fácil estacionamento e acesso.
             </p>
             <a href="https://maps.google.com/?q=R.+Aquidaban,+730+-+Glória,+Joinville+-+SC" target="_blank" rel="noopener" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-6 py-3 rounded-xl font-bold uppercase text-xs tracking-wider inline-block">
               Abrir no Google Maps ➔
@@ -712,8 +712,8 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- FOOTER                       -->
 <!-- ============================ -->
-<footer class="py-12 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<footer class="py-12 px-4 md:px-[2cm]">
+  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
       <div>
         <p class="font-display text-2xl font-bold">Bicho Solto <span class="text-terracota italic">Animal Care</span></p>
