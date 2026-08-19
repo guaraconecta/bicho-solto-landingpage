@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petshop Design System — Motion & Transitions Edition</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        cremeQuente: '#FBF6EE',
+        marromPet: '#3D2B1F',
+        marromClaro: '#6B4E3D',
+        terracota: '#C66B3D',
+        terracotaHover: '#D67748',
+        laranjaVibrante: '#F4823C',
+        laranjaHover: '#FF8F4D',
+        verdePet: '#5C8A3A',
+        verdeHover: '#6B9E45',
+        mostarda: '#E8B84B',
+        areia: '#E8DCC8',
+        areiaEscura: '#D4C4A8',
+        cinzaPet: '#9B8B7A',
+        pageBg: '#EDE5D8',
+        // Dark theme additions
+        darkBg: '#1A1410',
+        darkCard: '#261D17',
+        darkSurface: '#33261F',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'serif'],
+        body: ['Nunito', 'sans-serif'],
+        detalhe: ['Caveat', 'cursive'],
+      },
+      borderRadius: {
+        'dobra': '2rem',
+        'card': '1.5rem',
+        'item': '1rem',
+        'pill': '9999px',
+      },
+      transitionTimingFunction: {
+        'bounce-custom': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'smooth-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      }
+    }
+  }
+}
+</script>
+<style>
+  :root {
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+  }
+
+  body { 
+    font-family: 'Nunito', sans-serif; 
+    background-color: #EDE5D8; 
+    color: #3D2B1F; 
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  .dark body {
+    background-color: #120D0A;
+    color: #FBF6EE;
+  }
+
+  /* Paw Print Pattern */
+  .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C66B3D' fill-opacity='0.04'%3E%3Cellipse cx='30' cy='35' rx='8' ry='6'/%3E%3Cellipse cx='18' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='42' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='12' cy='38' rx='3' ry='4'/%3E%3Cellipse cx='48' cy='38' rx='3' ry='4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F4823C' fill-opacity='0.06'%3E%3Cellipse cx='30' cy='35' rx='8' ry='6'/%3E%3Cellipse cx='18' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='42' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='12' cy='38' rx='3' ry='4'/%3E%3Cellipse cx='48' cy='38' rx='3' ry='4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Separator */
+  .separator-terracota {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C66B3D, transparent);
+  }
+
+  /* Scroll Reveal System */
+  .scroll-reveal { 
+    opacity: 0; 
+    transform: translateY(24px) scale(0.98); 
+    transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth); 
+    will-change: opacity, transform;
+  }
+  .scroll-reveal.visible { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+  }
+  .scroll-reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+  }
+  .scroll-reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Micro Interactions & Hover Dynamics */
+  .btn-cta { 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background-color 0.2s ease; 
+  }
+  .btn-cta::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .btn-cta:active::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    transition: 0s;
+  }
+  .btn-cta:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 12px 28px rgba(244,130,60,0.35); 
+  }
+  .btn-cta:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+
+  .btn-primary { 
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background-color 0.2s ease; 
+  }
+  .btn-primary:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 12px 28px rgba(198,107,61,0.3); 
+  }
+
+  /* Service Card Lift & Magnetic Ripple */
+  .service-card { 
+    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease, border-color 0.3s ease; 
+  }
+  .service-card:hover { 
+    transform: translateY(-8px) scale(1.01); 
+    box-shadow: 0 20px 45px rgba(61,43,31,0.12); 
+    border-color: rgba(198,107,61,0.5);
+  }
+
+  /* Product Card 3D Lift & Shine Effect */
+  .product-card { 
+    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease; 
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .product-card:hover::before {
+    left: 150%;
+  }
+  .product-card:hover { 
+    transform: translateY(-8px) rotate(0.5deg); 
+    box-shadow: 0 20px 40px rgba(61,43,31,0.14); 
+  }
+
+  /* Underline Warm Animation */
+  .underline-warm { position: relative; }
+  .underline-warm::after {
+    content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 2.5px; background: #C66B3D; border-radius: 2px; 
+    transition: width 0.35s var(--ease-spring);
+  }
+  .underline-warm:hover::after { width: 100%; }
+
+  /* Animated Keyframes */
+  .badge-bounce { animation: floatBounce 3s ease-in-out infinite; }
+  @keyframes floatBounce { 
+    0%, 100% { transform: translateY(0) scale(1); } 
+    50% { transform: translateY(-6px) scale(1.05); } 
+  }
+
+  .pulse-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(198,107,61,0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(198,107,61,0); }
+  }
+
+  .paw-wiggle { animation: pawWiggle 4s ease-in-out infinite; transform-origin: bottom center; }
+  @keyframes pawWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-8deg); }
+    75% { transform: rotate(8deg); }
+  }
+
+  /* Shimmer Skeleton */
+  .skeleton-shimmer {
+    background: linear-gradient(90deg, rgba(232,220,200,0.4) 0%, rgba(251,246,238,0.9) 50%, rgba(232,220,200,0.4) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Tab Indicator Sliding */
+  .tab-pill {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s var(--ease-spring);
+  }
+  .tab-pill.active {
+    background-color: #C66B3D;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(198,107,61,0.3);
+  }
+
+  /* Native Dialog Modern `@starting-style` and discrete transition */
+  dialog {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+    transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-spring), display 0.35s allow-discrete, overlay 0.35s allow-discrete;
+    border: none;
+  }
+  dialog[open] {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  @starting-style {
+    dialog[open] {
+      opacity: 0;
+      transform: scale(0.92) translateY(12px);
+    }
+  }
+  dialog::backdrop {
+    background-color: rgba(61, 43, 31, 0);
+    backdrop-filter: blur(0px);
+    transition: background-color 0.35s ease, backdrop-filter 0.35s ease, display 0.35s allow-discrete, overlay 0.35s allow-discrete;
+  }
+  dialog[open]::backdrop {
+    background-color: rgba(61, 43, 31, 0.6);
+    backdrop-filter: blur(6px);
+  }
+  @starting-style {
+    dialog[open]::backdrop {
+      background-color: rgba(61, 43, 31, 0);
+      backdrop-filter: blur(0px);
+    }
+  }
+
+  /* Glassmorphism Surface */
+  .glass-card {
+    background: rgba(251, 246, 238, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .dark .glass-card {
+    background: rgba(38, 29, 23, 0.85);
+    border: 1px solid rgba(198, 107, 61, 0.2);
+  }
+
+  /* Interactive Toast Notification */
+  #toast {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s var(--ease-spring), opacity 0.4s ease;
+  }
+  #toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
+</head>
+<body class="bg-pageBg dark:bg-darkBg text-marromPet dark:text-cremeQuente font-body antialiased transition-colors duration-400">
+
+<!-- ============================ -->
+<!-- TOP STICKY BAR FOR SYSTEM CONTROL -->
+<!-- ============================ -->
+<header class="sticky top-0 z-50 bg-cremeQuente/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-areiaEscura/30 dark:border-terracota/20 px-4 py-3 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-terracota flex items-center justify-center text-white font-bold font-display">🐾</div>
+      <div>
+        <span class="font-display font-bold text-lg leading-none block">Petshop Design System</span>
+        <span class="font-body text-[11px] text-terracota uppercase tracking-widest font-semibold">v2.0 Motion &amp; Transitions</span>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-3">
+      <!-- Quick Nav Links -->
+      <nav class="hidden md:flex items-center gap-4 text-xs uppercase tracking-wider font-bold text-cinzaPet">
+        <a href="#hero" class="hover:text-terracota transition-colors">Hero</a>
+        <a href="#motion-system" class="hover:text-terracota transition-colors text-terracota font-extrabold">★ Transições</a>
+        <a href="#tokens" class="hover:text-terracota transition-colors">Tokens</a>
+        <a href="#componentes" class="hover:text-terracota transition-colors">Componentes</a>
+        <a href="#interativo" class="hover:text-terracota transition-colors">Demos</a>
+        <a href="#dobras" class="hover:text-terracota transition-colors">Dobras</a>
+      </nav>
+
+      <!-- Theme Switcher Button -->
+      <button id="themeToggle" onclick="toggleTheme()" class="flex items-center gap-2 bg-areia/50 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-1.5 rounded-full text-xs font-bold transition-all hover:scale-105 active:scale-95">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel" class="hidden sm:inline">Modo Escuro</span>
+      </button>
+
+      <!-- Trigger Modal Button -->
+      <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-4 py-1.5 rounded-full font-body font-bold text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-1.5">
+        <span>Testar Modal</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ -->
+<!-- 1. HERO / APRESENTAÇÃO       -->
+<!-- ============================ -->
+<section id="hero" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra overflow-hidden shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern relative transition-colors duration-400">
+    <div class="relative z-10 min-h-[85vh] flex items-center px-6 md:px-12 py-16">
+      <div class="w-full grid md:grid-cols-2 gap-12 items-center">
+        <div class="scroll-reveal-left">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-px bg-terracota"></div>
+            <span class="font-body text-terracota text-xs uppercase tracking-[0.3em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Motion &amp; Transitions v2.0</span>
+          </div>
+          <h1 class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-6 font-bold tracking-tight">
+            Petshop<br>
+            <span class="text-terracota italic font-normal">Design</span> System
+          </h1>
+          <p class="font-body text-lg text-cinzaPet dark:text-areiaEscura mb-8 max-w-md leading-relaxed">
+            Sistema visual e interativo completo para landing pages petshop. Agora com <strong class="text-terracota font-bold">transições fluidas, micro-interações responsivas, visualização 3D de cards e modal moderno com `@starting-style`</strong>.
+          </p>
+          <div class="flex flex-wrap gap-4 items-center">
+            <button onclick="scrollToSection('motion-system')" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-laranjaHover flex items-center gap-2">
+              <span>Ver Sistema de Transições</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </button>
+            <button onclick="openBookingModal()" class="btn-primary bg-terracota text-white px-8 py-4 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-terracotaHover">
+              Testar Agendamento Live
+            </button>
+          </div>
+          <!-- Trust Badge with Spring Motion -->
+          <div class="flex items-center gap-4 mt-10 p-3 rounded-2xl bg-white/60 dark:bg-darkSurface/60 border border-areiaEscura/30 dark:border-terracota/20 max-w-sm backdrop-blur-sm shadow-sm">
+            <div class="w-4 h-4 rounded-full bg-verdePet badge-bounce flex-shrink-0"></div>
+            <span class="font-body text-sm font-semibold">Pet Friendly · Transições a 60fps · Acessível</span>
+          </div>
+        </div>
+
+        <!-- Hero Card Canvas & Interactive Motion Card -->
+        <div class="relative scroll-reveal-right">
+          <div class="aspect-[4/5] rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-xl glass-card relative group transition-transform duration-500 hover:scale-[1.01]">
+            <div class="w-full h-full bg-gradient-to-br from-areia/40 via-cremeQuente to-areia/60 dark:from-darkSurface dark:to-darkCard flex items-center justify-center relative p-8">
+              <div class="absolute inset-0 paw-pattern opacity-70"></div>
+              
+              <!-- Floating Sparkles -->
+              <div class="absolute top-6 right-8 text-2xl animate-pulse">✨</div>
+              <div class="absolute bottom-12 left-8 text-xl paw-wiggle">🐾</div>
+
+              <div class="relative z-10 text-center p-6 bg-white/80 dark:bg-darkCard/90 rounded-card border border-areiaEscura/30 dark:border-terracota/30 shadow-lg backdrop-blur-md transform transition-all duration-500 group-hover:translate-y-[-4px]">
+                <!-- Interactive Animated Paw Icon -->
+                <div class="w-24 h-24 mx-auto mb-4 bg-terracota/10 dark:bg-terracota/20 rounded-full flex items-center justify-center pulse-glow cursor-pointer" onclick="showToast('🐾 Au Au! Transição disparada com sucesso!')">
+                  <svg class="w-14 h-14 icon-pet stroke-terracota paw-wiggle" viewBox="0 0 64 64" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="32" cy="38" rx="10" ry="8"/>
+                    <ellipse cx="18" cy="26" rx="5" ry="6"/>
+                    <ellipse cx="46" cy="26" rx="5" ry="6"/>
+                    <ellipse cx="10" cy="40" rx="4" ry="5"/>
+                    <ellipse cx="54" cy="40" rx="4" ry="5"/>
+                  </svg>
+                </div>
+                <p class="font-display text-2xl text-terracota font-bold mb-1">Pet Boutique</p>
+                <div class="separator-terracota w-24 mx-auto mb-3"></div>
+                <p class="font-body text-xs text-cinzaPet uppercase tracking-[0.25em] font-semibold">Motion &amp; Visual System</p>
+                <p class="font-detalhe text-xl text-terracota mt-2">Clique no ícone para interagir!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated Floating Badge 1 -->
+          <div class="absolute -bottom-4 -right-4 bg-white dark:bg-darkCard rounded-card p-4 shadow-xl border border-areiaEscura/30 dark:border-terracota/30 badge-bounce backdrop-blur-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-laranjaVibrante/15 flex items-center justify-center text-laranjaVibrante font-bold text-lg">
+                🚀
+              </div>
+              <div>
+                <p class="font-body text-sm font-bold">+60 FPS</p>
+                <p class="font-body text-xs text-cinzaPet">Transições Fluídas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated Floating Badge 2 -->
+          <div class="absolute -top-4 -left-4 bg-white dark:bg-darkCard rounded-card p-3 shadow-lg border border-areiaEscura/30 dark:border-terracota/30 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+            <span class="font-body text-xs font-extrabold text-verdePet flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-verdePet animate-ping"></span>
+              Spring Timing Ready
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 2. SISTEMA DE TRANSIÇÕES (NEW SPECIAL SECTION) -->
+<!-- ============================ -->
+<section id="motion-system" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="flex items-center gap-3 mb-4 scroll-reveal">
+      <span class="font-display text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full">NOVO RECURSO</span>
+      <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold">01. Sistema de Transições &amp; Motion Design</h2>
+    </div>
+    
+    <p class="font-body text-base text-cinzaPet dark:text-areiaEscura mb-10 max-w-3xl scroll-reveal">
+      Para tornar o site petshop dinâmico e amigável sem perder o tom profissional, definimos 6 padrões fundamentais de animação CSS e JavaScript. Teste cada efeito ao passar o mouse ou clicar nos cards abaixo:
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Motion Token 1: Spring Bounce -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group hover:border-terracota transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">1. Spring Bounce</span>
+          <span class="font-body text-xs font-mono text-terracota">cubic-bezier(0.34, 1.56, 0.64, 1)</span>
+        </div>
+        <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center cursor-pointer overflow-hidden p-4">
+          <button class="bg-terracota text-white px-5 py-2.5 rounded-xl font-bold text-sm transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-1" style="transition-timing-function: var(--ease-spring);">
+            Passe o mouse! 🐾
+          </button>
+        </div>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Usado em botões CTA, badges e cards ao passar o mouse. Dá um feedback visual orgânico e simpático.</p>
+      </div>
+
+      <!-- Motion Token 2: Glass Shine / Lift -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group hover:border-laranjaVibrante transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">2. Card Lift &amp; Shine</span>
+          <span class="font-body text-xs font-mono text-laranjaVibrante">translateY(-8px) + skew shine</span>
+        </div>
+        <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center cursor-pointer product-card p-4">
+          <div class="text-center">
+            <span class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente block">Ração Premium</span>
+            <span class="font-body text-xs text-laranjaVibrante font-bold">Efeito Brilho Diagonal</span>
+          </div>
+        </div>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Reflexo de luz suave ao passar o cursor pelos produtos da loja online.</p>
+      </div>
+
+      <!-- Motion Token 3: Smooth Accordion & Drawer -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group hover:border-verdePet transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">3. Accordion &amp; Expand</span>
+          <span class="font-body text-xs font-mono text-verdePet">grid-template-rows 0.4s</span>
+        </div>
+        <div class="bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 p-4">
+          <button onclick="toggleAccordion('acc-demo')" class="w-full flex items-center justify-between font-bold text-sm text-left">
+            <span>Dúvida frequente?</span>
+            <span id="acc-icon" class="text-terracota transition-transform duration-300">▼</span>
+          </button>
+          <div id="acc-demo" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out overflow-hidden">
+            <div class="overflow-hidden pt-2 font-body text-xs text-cinzaPet">
+              O agendamento de banho pode ser feito em poucos cliques pelo site ou WhatsApp 24h.
+            </div>
+          </div>
+        </div>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Expansão fluída sem quebra de layout para seção de perguntas frequentes.</p>
+      </div>
+
+      <!-- Motion Token 4: Skeleton Shimmer Loading -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">4. Skeleton Shimmer</span>
+          <span class="font-body text-xs font-mono text-terracota">1.8s infinite loop</span>
+        </div>
+        <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 p-4 flex flex-col gap-3 justify-center">
+          <div class="h-4 w-3/4 skeleton-shimmer rounded-full"></div>
+          <div class="h-3 w-1/2 skeleton-shimmer rounded-full"></div>
+          <div class="h-8 w-28 skeleton-shimmer rounded-xl mt-1"></div>
+        </div>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Carregamento suave para imagens de galeria e catálogo de produtos.</p>
+      </div>
+
+      <!-- Motion Token 5: Magnetic Pulse Badge -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">5. Pulse &amp; Float</span>
+          <span class="font-body text-xs font-mono text-verdePet">2.5s pulseGlow</span>
+        </div>
+        <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-verdePet/20 flex items-center justify-center pulse-glow">
+            <span class="w-4 h-4 rounded-full bg-verdePet"></span>
+          </div>
+          <span class="font-body text-sm font-bold">Atendimento Vet 24h</span>
+        </div>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Transmite urgência positiva e confiança para plantões veterinários.</p>
+      </div>
+
+      <!-- Motion Token 6: Top-Layer Dialog Modern Exit -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wider font-bold">6. Top-Layer Modal</span>
+          <span class="font-body text-xs font-mono text-laranjaVibrante">@starting-style</span>
+        </div>
+        <div class="h-32 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center justify-center p-4">
+          <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider">
+            Abrir Modal Exemplo
+          </button>
+        </div>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mt-3">Entrada e saída suaves utilizando APIs modernas do navegador com fallback.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 3. DESIGN TOKENS ORIGINAL ENHANCED -->
+<!-- ============================ -->
+<section id="tokens" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="flex items-center gap-3 mb-12 scroll-reveal">
+      <span class="number-friendly text-sm text-terracota font-bold">02</span>
+      <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+      <h2 class="font-display text-4xl font-bold">Design Tokens &amp; Componentes Base</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Card Service Token -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:shadow-md transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">Service Card</span>
+          <button onclick="copyToClipboard('#C66B3D')" class="font-mono text-xs text-terracota hover:underline cursor-pointer">#C66B3D 📋</button>
+        </div>
+        <div class="h-24 bg-white dark:bg-darkCard rounded-item border border-areiaEscura/20 flex items-center px-4 gap-3 service-card cursor-pointer">
+          <div class="w-10 h-10 rounded-item bg-terracota/10 flex items-center justify-center">
+            <svg class="w-6 h-6 icon-pet stroke-terracota" viewBox="0 0 24 24"><path d="M12 21s-6-4.5-6-9a6 6 0 0112 0c0 4.5-6 9-6 9z"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <div>
+            <span class="font-body text-base font-bold block">Banho &amp; Tosa</span>
+            <span class="font-body text-xs text-cinzaPet">Lift: translateY(-8px)</span>
+          </div>
+        </div>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">Card de serviço com ícone line-art. Hover: elevação com curva spring terrosa.</p>
+      </div>
+
+      <!-- CTA Button Token -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:shadow-md transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">CTA Button</span>
+          <button onclick="copyToClipboard('#F4823C')" class="font-mono text-xs text-laranjaVibrante hover:underline cursor-pointer">#F4823C 📋</button>
+        </div>
+        <div class="h-24 flex items-center justify-center">
+          <button onclick="showToast('🎉 Horário agendado!')" class="btn-cta bg-laranjaVibrante text-white px-6 py-3 rounded-xl font-body uppercase text-sm font-bold hover:bg-laranjaHover">
+            Agendar Banho
+          </button>
+        </div>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">CTA principal em laranja vibrante. Feedback tátil ao clicar.</p>
+      </div>
+
+      <!-- Trust Badge Token -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:shadow-md transition-all duration-300">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-body text-xs text-cinzaPet uppercase tracking-wide font-semibold">Trust Badge</span>
+          <button onclick="copyToClipboard('#5C8A3A')" class="font-mono text-xs text-verdePet hover:underline cursor-pointer">#5C8A3A 📋</button>
+        </div>
+        <div class="h-24 flex items-center justify-center gap-2">
+          <div class="w-3.5 h-3.5 rounded-full bg-verdePet badge-bounce"></div>
+          <span class="font-body text-sm font-bold">Vet 24h · Plantão</span>
+        </div>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-3">Selo de confiança com bounce suave. Transmite cuidado veterinário.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 4. TIPOGRAFIA                -->
+<!-- ============================ -->
+<section class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-12 scroll-reveal">
+        <span class="number-friendly text-sm text-terracota font-bold">03</span>
+        <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+        <h2 class="font-display text-4xl font-bold">Tipografia &amp; Animação de Texto</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-6">
+          <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H1 — Display</span>
+              <span class="font-body text-xs text-terracota font-mono">Fraunces / 72px / 700</span>
+            </div>
+            <p class="font-display text-5xl md:text-6xl leading-[1.05] font-bold hover:text-terracota transition-colors duration-300">Cuidado Pet</p>
+          </div>
+          <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H2 — Section</span>
+              <span class="font-body text-xs text-terracota font-mono">Fraunces / 48px / 600</span>
+            </div>
+            <p class="font-display text-3xl md:text-4xl leading-tight font-semibold">Nossos Serviços Especializados</p>
+          </div>
+          <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">H3 — Subtitle</span>
+              <span class="font-body text-xs text-terracota font-mono">Fraunces / 28px / 500</span>
+            </div>
+            <p class="font-display text-2xl text-terracota font-medium">Banho &amp; Tosa Premium</p>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Body Large</span>
+              <span class="font-body text-xs text-terracota font-mono">Nunito / 20px / 400</span>
+            </div>
+            <p class="font-body text-xl leading-relaxed">Cuidado completo para o seu melhor amigo com carinho e profissionalismo.</p>
+          </div>
+          <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Detalhe — Caveat Handcrafted</span>
+              <span class="font-body text-xs text-terracota font-mono">Caveat / 32px / 700</span>
+            </div>
+            <p class="font-detalhe text-4xl text-terracota font-bold transform -rotate-1 hover:rotate-1 transition-transform duration-300 inline-block cursor-default">
+              Seu pet merece o melhor carinho! 🐾
+            </p>
+          </div>
+          <div class="border-b border-areiaEscura/30 dark:border-terracota/20 pb-4 scroll-reveal">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold">Price — Highlight</span>
+              <span class="font-body text-xs text-terracota font-mono">Nunito / 24px / 800</span>
+            </div>
+            <p class="font-body text-2xl text-laranjaVibrante font-extrabold flex items-center gap-2">
+              <span>R$ 45,00</span>
+              <span class="text-xs bg-laranjaVibrante/10 text-laranjaVibrante px-2 py-0.5 rounded-full font-bold">Oferta Especial</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 5. CORES & PALETA INTERATIVA -->
+<!-- ============================ -->
+<section class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="flex items-center justify-between mb-12 scroll-reveal">
+      <div class="flex items-center gap-3">
+        <span class="number-friendly text-sm text-terracota font-bold">04</span>
+        <div class="h-px w-16 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+        <h2 class="font-display text-4xl font-bold">Cores &amp; Surfaces (Clique para Copiar)</h2>
+      </div>
+      <span class="text-xs font-body text-cinzaPet hidden sm:inline">Toque em qualquer cor para copiar o Hex</span>
+    </div>
+
+    <!-- Background Swatches -->
+    <div class="mb-10 scroll-reveal">
+      <h3 class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold mb-4">Backgrounds &amp; Superfícies</h3>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div onclick="copyToClipboard('#FBF6EE')" class="group cursor-pointer">
+          <div class="h-20 rounded-item bg-cremeQuente border border-areiaEscura/40 shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-end p-2">
+            <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #FBF6EE</span>
+          </div>
+          <p class="font-body text-xs text-cinzaPet mt-2">#FBF6EE</p>
+          <p class="font-body text-xs font-bold">Creme Quente</p>
+        </div>
+
+        <div onclick="copyToClipboard('#3D2B1F')" class="group cursor-pointer">
+          <div class="h-20 rounded-item bg-marromPet border border-areiaEscura/40 shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-end p-2 text-white">
+            <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #3D2B1F</span>
+          </div>
+          <p class="font-body text-xs text-cinzaPet mt-2">#3D2B1F</p>
+          <p class="font-body text-xs font-bold">Marrom Pet</p>
+        </div>
+
+        <div onclick="copyToClipboard('#C66B3D')" class="group cursor-pointer">
+          <div class="h-20 rounded-item bg-terracota border border-areiaEscura/40 shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-end p-2 text-white">
+            <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #C66B3D</span>
+          </div>
+          <p class="font-body text-xs text-cinzaPet mt-2">#C66B3D</p>
+          <p class="font-body text-xs font-bold">Terracota</p>
+        </div>
+
+        <div onclick="copyToClipboard('#F4823C')" class="group cursor-pointer">
+          <div class="h-20 rounded-item bg-laranjaVibrante border border-areiaEscura/40 shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-end p-2 text-white">
+            <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #F4823C</span>
+          </div>
+          <p class="font-body text-xs text-cinzaPet mt-2">#F4823C</p>
+          <p class="font-body text-xs font-bold">Laranja Vibrante</p>
+        </div>
+
+        <div onclick="copyToClipboard('#5C8A3A')" class="group cursor-pointer">
+          <div class="h-20 rounded-item bg-verdePet border border-areiaEscura/40 shadow-sm group-hover:scale-105 transition-transform duration-300 flex items-end p-2 text-white">
+            <span class="text-[10px] font-mono opacity-0 group-hover:opacity-100 transition-opacity font-bold">Copiar #5C8A3A</span>
+          </div>
+          <p class="font-body text-xs text-cinzaPet mt-2">#5C8A3A</p>
+          <p class="font-body text-xs font-bold">Verde Pet</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 6. COMPONENTES UI & INTERAÇÃO INTERATIVA -->
+<!-- ============================ -->
+<section id="componentes" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="relative z-10">
+      <div class="flex items-center gap-3 mb-12 scroll-reveal">
+        <span class="number-friendly text-sm text-terracota font-bold">05</span>
+        <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+        <h2 class="font-display text-4xl font-bold">Componentes UI &amp; Micro-interações</h2>
+      </div>
+
+      <!-- Interactive Filter Tabs -->
+      <div class="mb-12 scroll-reveal">
+        <h3 class="font-body text-xs text-cinzaPet uppercase tracking-[0.2em] font-semibold mb-4">Tabs de Navegação com Animação</h3>
+        <div class="flex flex-wrap gap-2 p-1.5 bg-white/70 dark:bg-darkSurface/70 rounded-full border border-areiaEscura/30 dark:border-terracota/20 max-w-xl">
+          <button onclick="switchTab(this, 'all')" class="tab-pill active px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Todos</button>
+          <button onclick="switchTab(this, 'caes')" class="tab-pill px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Cães 🐶</button>
+          <button onclick="switchTab(this, 'gatos')" class="tab-pill px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Gatos 🐱</button>
+          <button onclick="switchTab(this, 'vet')" class="tab-pill px-6 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Veterinário 🏥</button>
+        </div>
+      </div>
+
+      <!-- Interactive Grid of Cards -->
+      <div id="cardsGrid" class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Service Card 1 -->
+        <div class="card-item caes service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 cursor-pointer group scroll-reveal">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 icon-pet stroke-terracota" viewBox="0 0 24 24"><path d="M12 21s-6-4.5-6-9a6 6 0 0112 0c0 4.5-6 9-6 9z"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <span class="bg-terracota/10 text-terracota text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full">Cães &amp; Gatos</span>
+          </div>
+          <h4 class="font-display text-xl font-bold mb-2">Banho &amp; Tosa VIP</h4>
+          <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4">Shampoo hipoalergênico, secagem com ar morno e corte de unhas.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-body text-xl text-laranjaVibrante font-extrabold">R$ 65,00</span>
+            <button onclick="openBookingModal()" class="underline-warm font-body text-xs text-terracota uppercase font-bold">Agendar ➔</button>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="card-item caes gatos product-card bg-white dark:bg-darkSurface rounded-card overflow-hidden cursor-pointer border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+          <div class="aspect-square bg-areia/40 overflow-hidden relative group">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=500&h=500&fit=crop" alt="Brinquedo Pet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute top-3 right-3">
+              <button onclick="showToast('❤️ Adicionado aos favoritos!')" class="w-9 h-9 rounded-full bg-white/90 dark:bg-darkCard/90 flex items-center justify-center text-terracota hover:scale-110 transition-transform shadow-md">
+                ♥
+              </button>
+            </div>
+          </div>
+          <div class="p-5">
+            <h4 class="font-body text-base font-bold">Brinquedo Mordedor Soft</h4>
+            <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-3">Borracha atóxica durável</p>
+            <div class="flex items-center justify-between">
+              <span class="font-body text-lg text-laranjaVibrante font-extrabold">R$ 39,90</span>
+              <button onclick="showToast('🛒 Adicionado ao carrinho!')" class="btn-cta bg-terracota text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase">Comprar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="card-item vet service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 cursor-pointer group scroll-reveal">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-12 h-12 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 icon-pet stroke-verdePet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <span class="bg-verdePet/10 text-verdePet text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full">Consulta Vet</span>
+          </div>
+          <h4 class="font-display text-xl font-bold mb-2">Check-up Completo</h4>
+          <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4">Avaliação geral de saúde, exames rápidos e aplicação de vacinas.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-body text-xl text-verdePet font-extrabold">R$ 120,00</span>
+            <button onclick="openBookingModal()" class="underline-warm font-body text-xs text-verdePet uppercase font-bold">Marcar ➔</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 7. INTERATIVIDADE & MODAL MODERNO -->
+<!-- ============================ -->
+<section id="interativo" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="flex items-center gap-3 mb-8 scroll-reveal">
+      <span class="number-friendly text-sm text-terracota font-bold">06</span>
+      <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+      <h2 class="font-display text-4xl font-bold">Componentes Interativos em Ação</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-6 scroll-reveal">
+        <h3 class="font-display text-2xl font-bold text-terracota">Modal Moderno com `@starting-style`</h3>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+          Nenhum plugin pesado é necessário. Usamos a API nativa `<dialog>` com transições discretas CSS para entrada e saída fluídas. Teste agora clicando no botão ao lado.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-sm shadow-md">
+            Abrir Modal de Agendamento 🐾
+          </button>
+          <button onclick="showToast('✨ Notificação Toast ativada!')" class="btn-primary bg-terracota text-white px-6 py-4 rounded-xl font-bold uppercase tracking-wider text-sm">
+            Testar Toast Feedback
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Form Preview -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <h4 class="font-display text-lg font-bold mb-4">Input Focus Ring Spec</h4>
+        <form onsubmit="event.preventDefault(); showToast('👍 Formulário de exemplo submetido!');" class="space-y-4">
+          <div>
+            <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do Tutor</label>
+            <input type="text" placeholder="Ex: Ana Silva" class="w-full bg-white dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota focus:ring-4 focus:ring-terracota/15 transition-all duration-300 font-body text-sm">
+          </div>
+          <div>
+            <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do Pet</label>
+            <input type="text" placeholder="Ex: Thor 🐶" class="w-full bg-white dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota focus:ring-4 focus:ring-terracota/15 transition-all duration-300 font-body text-sm">
+          </div>
+          <button type="submit" class="w-full btn-cta bg-terracota text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider">
+            Simular Envio
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 8. ESTRUTURA DE DOBRAS       -->
+<!-- ============================ -->
+<section id="dobras" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-marromPet dark:bg-darkSurface rounded-dobra p-8 md:p-12 py-16 md:py-20 text-white shadow-xl transition-colors duration-400">
+    <div class="flex items-center gap-3 mb-12 scroll-reveal">
+      <span class="number-friendly text-sm text-terracota font-bold">07</span>
+      <div class="h-px flex-1 bg-white/20"></div>
+      <h2 class="font-display text-4xl font-bold text-white">Estrutura de Dobras &amp; Gatilhos de Scroll</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
+        <span class="font-display text-3xl font-bold text-terracota/40">01</span>
+        <div>
+          <h4 class="font-display text-lg font-bold text-white">Hero Split Screen</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Dobra container com cantos rounded-dobra. Gatilhos: Float bounce no selo, paw-wiggle no ícone principal.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
+        <span class="font-display text-3xl font-bold text-terracota/40">02</span>
+        <div>
+          <h4 class="font-display text-lg font-bold text-white">Grid de Serviços</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Grid de 3 colunas com elevação spring (-8px) ao passar o mouse e contorno terracota.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
+        <span class="font-display text-3xl font-bold text-terracota/40">03</span>
+        <div>
+          <h4 class="font-display text-lg font-bold text-white">Catálogo E-commerce</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Tabs com animação de seleção fluída e efeito de brilho passar de luz (shine) nas imagens.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 p-4 bg-white/5 rounded-item border-l-4 border-terracota scroll-reveal">
+        <span class="font-display text-3xl font-bold text-terracota/40">04</span>
+        <div>
+          <h4 class="font-display text-lg font-bold text-white">Diferenciais &amp; Vet 24h</h4>
+          <p class="font-body text-xs text-areiaEscura mt-1">Badge com animação pulseGlow contínua transmitindo confiança veterinária instantânea.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- FOOTER & CREDITS             -->
+<!-- ============================ -->
+<footer class="py-12 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-display text-2xl font-bold">Petshop <span class="text-terracota italic">Design System</span></p>
+        <p class="font-body text-xs text-cinzaPet uppercase tracking-widest mt-1 font-semibold">v2.0 — Sistema Completo de Transições &amp; Efeitos Visual</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-primary bg-terracota text-white px-6 py-2.5 rounded-full font-body text-xs uppercase tracking-wider font-bold">
+          ↑ Voltar ao Topo
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ -->
+<!-- NATIVE DIALOG MODAL Component -->
+<!-- ============================ -->
+<dialog id="bookingModal" class="rounded-card p-0 shadow-2xl max-w-lg w-full bg-cremeQuente dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 text-marromPet dark:text-cremeQuente">
+  <div class="p-6 md:p-8">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-laranjaVibrante/20 flex items-center justify-center text-xl">🐾</div>
+        <div>
+          <h3 class="font-display text-xl font-bold">Agendamento Rápido</h3>
+          <p class="font-body text-xs text-cinzaPet">Selecione o serviço para o seu pet</p>
+        </div>
+      </div>
+      <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-areiaEscura/20 dark:bg-darkSurface flex items-center justify-center font-bold text-sm hover:bg-terracota hover:text-white transition-colors">✕</button>
+    </div>
+
+    <form onsubmit="event.preventDefault(); closeBookingModal(); showToast('🎉 Agendamento realizado com sucesso!');" class="space-y-4">
+      <div>
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Serviço Desejado</label>
+        <select class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
+          <option>Banho &amp; Tosa Completo</option>
+          <option>Consulta Veterinária Check-up</option>
+          <option>Tosa Higiênica + Hidratação</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Data</label>
+          <input type="date" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-sm focus:outline-none focus:border-terracota">
+        </div>
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Horário</label>
+          <input type="time" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-sm focus:outline-none focus:border-terracota">
+        </div>
+      </div>
+      <button type="submit" class="w-full btn-cta bg-laranjaVibrante text-white py-3.5 rounded-xl font-bold uppercase text-sm tracking-wider shadow-md">
+        Confirmar Agendamento 🐾
+      </button>
+    </form>
+  </div>
+</dialog>
+
+<!-- ============================ -->
+<!-- TOAST NOTIFICATION CONTAINER -->
+<!-- ============================ -->
+<div id="toast" class="fixed bottom-6 right-6 z-50 bg-marromPet dark:bg-darkSurface text-white px-6 py-4 rounded-card shadow-2xl border border-terracota/40 flex items-center gap-3 max-w-md">
+  <span class="text-xl">✨</span>
+  <span id="toastMessage" class="font-body text-sm font-bold">Mensagem do sistema</span>
+</div>
+
+<!-- ============================ -->
+<!-- JAVASCRIPT CONTROLLERS       -->
+<!-- ============================ -->
+<script>
+  // 1. Scroll Reveal Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => observer.observe(el));
+
+  // 2. Theme Switcher (Dark / Light Mode)
+  function toggleTheme() {
+    const htmlEl = document.documentElement;
+    const isDark = htmlEl.classList.toggle('dark');
+    document.getElementById('themeIcon').textContent = isDark ? '☀️' : '🌙';
+    document.getElementById('themeLabel').textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
+    showToast(isDark ? '🌙 Modo escuro ativado!' : '☀️ Modo claro ativado!');
+  }
+
+  // 3. Toast Controller
+  let toastTimer;
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMessage').textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3200);
+  }
+
+  // 4. Copy to Clipboard Tooltip
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text);
+    showToast(`📋 Copiado para a área de transferência: ${text}`);
+  }
+
+  // 5. Booking Modal Controller (Native Dialog)
+  const bookingModal = document.getElementById('bookingModal');
+  function openBookingModal() {
+    bookingModal.showModal();
+  }
+  function closeBookingModal() {
+    bookingModal.close();
+  }
+
+  // Close modal when clicking outside backdrop
+  bookingModal.addEventListener('click', (e) => {
+    const rect = bookingModal.getBoundingClientRect();
+    if (
+      e.clientX < rect.left ||
+      e.clientX > rect.right ||
+      e.clientY < rect.top ||
+      e.clientY > rect.bottom
+    ) {
+      bookingModal.close();
+    }
+  });
+
+  // 6. Accordion Toggle
+  function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById('acc-icon');
+    const isExpanded = content.classList.contains('grid-rows-[1fr]');
+    
+    if (isExpanded) {
+      content.classList.remove('grid-rows-[1fr]');
+      content.classList.add('grid-rows-[0fr]');
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      content.classList.remove('grid-rows-[0fr]');
+      content.classList.add('grid-rows-[1fr]');
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  // 7. Interactive Category Tabs Filter
+  function switchTab(buttonEl, category) {
+    // Active class toggle
+    document.querySelectorAll('.tab-pill').forEach(btn => btn.classList.remove('active'));
+    buttonEl.classList.add('active');
+
+    // Filter card items with fade animation
+    const cards = document.querySelectorAll('.card-item');
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          card.style.display = 'none';
+        }
+      }, 200);
+    });
+  }
+
+  // 8. Scroll Smooth Helper
+  function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
