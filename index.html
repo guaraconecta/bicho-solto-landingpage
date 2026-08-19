@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bicho Solto — Animal Care | Pet Shop em Joinville</title>
+<meta name="description" content="Banho, tosa, vacinação e produtos naturais para pets em Joinville. R. Aquidaban, 730 - Glória. Agende pelo WhatsApp (47) 99751-5499.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        cremeQuente: '#FBF6EE',
+        marromPet: '#3D2B1F',
+        marromClaro: '#6B4E3D',
+        terracota: '#C66B3D',
+        terracotaHover: '#D67748',
+        laranjaVibrante: '#F4823C',
+        laranjaHover: '#FF8F4D',
+        verdePet: '#5C8A3A',
+        verdeHover: '#6B9E45',
+        mostarda: '#E8B84B',
+        areia: '#E8DCC8',
+        areiaEscura: '#D4C4A8',
+        cinzaPet: '#9B8B7A',
+        pageBg: '#EDE5D8',
+        darkBg: '#1A1410',
+        darkCard: '#261D17',
+        darkSurface: '#33261F',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'serif'],
+        body: ['Nunito', 'sans-serif'],
+        detalhe: ['Caveat', 'cursive'],
+      },
+      borderRadius: {
+        'dobra': '2rem',
+        'card': '1.5rem',
+        'item': '1rem',
+        'pill': '9999px',
+      }
+    }
+  }
+}
+</script>
+<style>
+  :root {
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body { 
+    font-family: 'Nunito', sans-serif; 
+    background-color: #EDE5D8; 
+    color: #3D2B1F; 
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  .dark body {
+    background-color: #120D0A;
+    color: #FBF6EE;
+  }
+
+  /* Paw Print Pattern */
+  .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C66B3D' fill-opacity='0.04'%3E%3Cellipse cx='30' cy='35' rx='8' ry='6'/%3E%3Cellipse cx='18' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='42' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='12' cy='38' rx='3' ry='4'/%3E%3Cellipse cx='48' cy='38' rx='3' ry='4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F4823C' fill-opacity='0.06'%3E%3Cellipse cx='30' cy='35' rx='8' ry='6'/%3E%3Cellipse cx='18' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='42' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='12' cy='38' rx='3' ry='4'/%3E%3Cellipse cx='48' cy='38' rx='3' ry='4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Scroll Reveal System */
+  .scroll-reveal { 
+    opacity: 0; 
+    transform: translateY(24px) scale(0.98); 
+    transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth); 
+    will-change: opacity, transform;
+  }
+  .scroll-reveal.visible { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+
+  /* Buttons & Hover Dynamics */
+  .btn-cta { 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background-color 0.2s ease; 
+  }
+  .btn-cta:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 12px 28px rgba(244,130,60,0.35); 
+  }
+  .btn-cta:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+
+  .btn-primary { 
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background-color 0.2s ease; 
+  }
+  .btn-primary:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 12px 28px rgba(198,107,61,0.3); 
+  }
+
+  /* Service Card Lift */
+  .service-card { 
+    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease, border-color 0.3s ease; 
+  }
+  .service-card:hover { 
+    transform: translateY(-8px) scale(1.01); 
+    box-shadow: 0 20px 45px rgba(61,43,31,0.12); 
+    border-color: rgba(198,107,61,0.5);
+  }
+
+  /* Product Card 3D Lift */
+  .product-card { 
+    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease; 
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .product-card:hover::before {
+    left: 150%;
+  }
+  .product-card:hover { 
+    transform: translateY(-8px) rotate(0.5deg); 
+    box-shadow: 0 20px 40px rgba(61,43,31,0.14); 
+  }
+
+  .badge-bounce { animation: floatBounce 3s ease-in-out infinite; }
+  @keyframes floatBounce { 
+    0%, 100% { transform: translateY(0) scale(1); } 
+    50% { transform: translateY(-6px) scale(1.05); } 
+  }
+
+  .pulse-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(198,107,61,0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(198,107,61,0); }
+  }
+
+  .paw-wiggle { animation: pawWiggle 4s ease-in-out infinite; transform-origin: bottom center; }
+  @keyframes pawWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-8deg); }
+    75% { transform: rotate(8deg); }
+  }
+
+  /* Tab Indicator */
+  .tab-pill.active {
+    background-color: #C66B3D;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(198,107,61,0.3);
+  }
+
+  /* Native Dialog Modal Transitions */
+  dialog {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+    transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-spring), display 0.35s allow-discrete, overlay 0.35s allow-discrete;
+    border: none;
+  }
+  dialog[open] {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  @starting-style {
+    dialog[open] {
+      opacity: 0;
+      transform: scale(0.92) translateY(12px);
+    }
+  }
+  dialog::backdrop {
+    background-color: rgba(61, 43, 31, 0);
+    backdrop-filter: blur(0px);
+    transition: background-color 0.35s ease, backdrop-filter 0.35s ease, display 0.35s allow-discrete, overlay 0.35s allow-discrete;
+  }
+  dialog[open]::backdrop {
+    background-color: rgba(61, 43, 31, 0.65);
+    backdrop-filter: blur(6px);
+  }
+  @starting-style {
+    dialog[open]::backdrop {
+      background-color: rgba(61, 43, 31, 0);
+      backdrop-filter: blur(0px);
+    }
+  }
+
+  /* Toast Notification */
+  #toast {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s var(--ease-spring), opacity 0.4s ease;
+  }
+  #toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
+</head>
+<body class="bg-pageBg dark:bg-darkBg text-marromPet dark:text-cremeQuente font-body antialiased transition-colors duration-400">
+
+<!-- ============================ -->
+<!-- HEADER NAVEGAÇÃO              -->
+<!-- ============================ -->
+<header class="sticky top-0 z-50 bg-cremeQuente/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-areiaEscura/30 dark:border-terracota/20 px-4 py-3.5 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <a href="#home" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center text-white font-bold font-display shadow-md group-hover:scale-105 transition-transform">BS</div>
+      <div>
+        <span class="font-display font-bold text-xl leading-none block text-marromPet dark:text-cremeQuente">Bicho Solto</span>
+        <span class="font-body text-[11px] text-terracota font-bold uppercase tracking-widest block">Animal Care — Joinville</span>
+      </div>
+    </a>
+
+    <!-- Nav Links Desktop -->
+    <nav class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-bold text-cinzaPet dark:text-areiaEscura">
+      <a href="#servicos" class="hover:text-terracota transition-colors">Serviços</a>
+      <a href="#calculadora" class="hover:text-terracota transition-colors text-terracota">Simular Valor</a>
+      <a href="#diferenciais" class="hover:text-terracota transition-colors">Diferenciais</a>
+      <a href="#depoimentos" class="hover:text-terracota transition-colors">Avaliações</a>
+      <a href="#contato" class="hover:text-terracota transition-colors">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <!-- Dark/Light Theme Switcher -->
+      <button onclick="toggleTheme()" id="themeToggle" aria-label="Alternar Tema" class="flex items-center justify-center w-10 h-10 rounded-full bg-areia/50 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 text-base transition-all hover:scale-105 active:scale-95">
+        <span id="themeIcon">🌙</span>
+      </button>
+
+      <!-- WhatsApp CTA Header -->
+      <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20serviço" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-5 py-2.5 rounded-full font-body font-bold text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-2 shadow-sm">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span class="hidden sm:inline">(47) 99751-5499</span>
+        <span class="sm:hidden">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================ -->
+<!-- 1. HERO SECTION NOVO LAYOUT  -->
+<!-- ============================ -->
+<section id="home" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra overflow-hidden shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern relative transition-colors duration-400">
+    <div class="relative z-10 min-h-[82vh] flex items-center px-6 md:px-12 py-12 md:py-16">
+      <div class="w-full grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Text Column (Left) -->
+        <div class="lg:col-span-7 scroll-reveal">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-terracota/10 border border-terracota/20 mb-6">
+            <span class="w-2.5 h-2.5 rounded-full bg-verdePet badge-bounce"></span>
+            <span class="font-body text-terracota text-xs font-bold uppercase tracking-wider">Pet Shop &amp; Banho e Tosa em Joinville — SC</span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] mb-6 font-bold text-marromPet dark:text-cremeQuente">
+            Amor, carinho e <br class="hidden sm:block">
+            <span class="text-terracota italic font-normal">respeito</span> em cada banho.
+          </h1>
+
+          <p class="font-body text-base md:text-lg text-cinzaPet dark:text-areiaEscura mb-8 max-w-2xl leading-relaxed">
+            Na <strong>Bicho Solto Animal Care</strong>, seu pet é atendido com paciência, produtos naturais hipoalergênicos e equipe altamente especializada. Oferecemos banho, tosa, vacinação e seleção de produtos selecionados no bairro Glória.
+          </p>
+
+          <!-- Buttons CTAs -->
+          <div class="flex flex-wrap items-center gap-4 mb-10">
+            <button onclick="openBookingModal('Banho & Tosa')" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-laranjaHover flex items-center gap-3 shadow-md">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+              <span>Agendar Banho pelo WhatsApp</span>
+            </button>
+            <a href="#calculadora" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-6 py-3.5 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-terracota/10">
+              Simular Valor Online ➔
+            </a>
+          </div>
+
+          <!-- Trust Badges Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-areiaEscura/30 dark:border-terracota/20">
+            <div class="flex items-center gap-3">
+              <div class="text-terracota text-xl font-bold">★ 4.6</div>
+              <div class="font-body text-xs text-cinzaPet dark:text-areiaEscura"><strong>595 avaliações</strong> no Google</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-verdePet text-xl">🌿</div>
+              <div class="font-body text-xs text-cinzaPet dark:text-areiaEscura"><strong>Shampoos Naturais</strong> hipoalergênicos</div>
+            </div>
+            <div class="flex items-center gap-3 col-span-2 sm:col-span-1">
+              <div class="text-laranjaVibrante text-xl">🚗</div>
+              <div class="font-body text-xs text-cinzaPet dark:text-areiaEscura"><strong>Taxi Pet Pickup</strong> em Joinville</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Right Visual Card -->
+        <div class="lg:col-span-5 relative scroll-reveal">
+          <div class="aspect-[4/5] rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-2xl bg-gradient-to-br from-areia/50 via-cremeQuente to-areiaEscura/30 dark:from-darkSurface dark:to-darkCard flex flex-col items-center justify-between p-8 relative group">
+            
+            <div class="w-full flex items-center justify-between">
+              <span class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-terracota border border-areiaEscura/30">
+                📍 R. Aquidaban, 730 - Glória
+              </span>
+              <span class="w-3 h-3 rounded-full bg-verdePet badge-bounce"></span>
+            </div>
+
+            <!-- Pet Animated Icon Box -->
+            <div class="text-center my-6">
+              <div class="w-28 h-28 mx-auto mb-4 bg-terracota/10 dark:bg-terracota/20 rounded-full flex items-center justify-center pulse-glow cursor-pointer" onclick="showToast('🐾 Au Au! Bicho Solto ama seu pet!')">
+                <svg class="w-16 h-16 icon-pet stroke-terracota paw-wiggle" viewBox="0 0 64 64" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="32" cy="38" rx="10" ry="8"/>
+                  <ellipse cx="18" cy="26" rx="5" ry="6"/>
+                  <ellipse cx="46" cy="26" rx="5" ry="6"/>
+                  <ellipse cx="10" cy="40" rx="4" ry="5"/>
+                  <ellipse cx="54" cy="40" rx="4" ry="5"/>
+                </svg>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-marromPet dark:text-cremeQuente">Bicho Solto</h3>
+              <p class="font-detalhe text-2xl text-terracota font-bold mt-1">Cuidado familiar com carinho</p>
+            </div>
+
+            <!-- Card Quick Price Info -->
+            <div class="w-full bg-white/90 dark:bg-darkCard/90 backdrop-blur-md p-4 rounded-item border border-areiaEscura/30 dark:border-terracota/30 shadow-lg text-center">
+              <p class="font-body text-xs text-cinzaPet uppercase font-bold tracking-wider">Banho Completo a partir de</p>
+              <div class="flex items-baseline justify-center gap-1.5 mt-1">
+                <span class="font-display text-3xl font-extrabold text-laranjaVibrante">R$ 45,00</span>
+                <span class="font-body text-xs text-cinzaPet">/ porte pequeno</span>
+              </div>
+              <button onclick="openBookingModal('Banho Completo')" class="w-full mt-3 btn-cta bg-terracota text-white py-2 rounded-xl text-xs font-bold uppercase tracking-wider">
+                Reservar Horário ➔
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-5 -left-5 bg-white dark:bg-darkCard p-4 rounded-card shadow-xl border border-areiaEscura/30 dark:border-terracota/30 flex items-center gap-3 backdrop-blur-md transform hover:scale-105 transition-transform">
+            <div class="w-10 h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center font-bold text-lg">
+              🐶
+            </div>
+            <div>
+              <p class="font-body text-xs font-bold text-marromPet dark:text-cremeQuente">Atendimento Cães &amp; Gatos</p>
+              <p class="font-body text-[11px] text-cinzaPet">Ambiente calmo e aconchegante</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 2. CALCULADORA INTERATIVA    -->
+<!-- ============================ -->
+<section id="calculadora" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-14 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="text-center max-w-2xl mx-auto mb-10 scroll-reveal">
+      <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Simulador de Valores</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mt-3">Calcule a Estimativa para seu Pet</h2>
+      <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-2">Escolha o porte do pet e o serviço desejado para estimar o valor instantaneamente:</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto bg-cremeQuente dark:bg-darkSurface p-6 md:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+      
+      <!-- Step 1: Porte -->
+      <div class="mb-6">
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet dark:text-areiaEscura mb-3">1. Porte do Animal</label>
+        <div class="grid grid-cols-3 gap-3">
+          <button onclick="setCalcPorte('pequeno', 0)" id="porte-pequeno" class="calc-porte-btn active bg-white dark:bg-darkCard p-3 rounded-xl border-2 border-terracota text-center font-bold text-xs uppercase transition-all">
+            <span class="block text-xl mb-1">🐩</span>
+            <span>Pequeno</span>
+          </button>
+          <button onclick="setCalcPorte('medio', 15)" id="porte-medio" class="calc-porte-btn bg-white dark:bg-darkCard p-3 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 text-center font-bold text-xs uppercase transition-all">
+            <span class="block text-xl mb-1">🐕</span>
+            <span>Médio (+R$15)</span>
+          </button>
+          <button onclick="setCalcPorte('grande', 35)" id="porte-grande" class="calc-porte-btn bg-white dark:bg-darkCard p-3 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 text-center font-bold text-xs uppercase transition-all">
+            <span class="block text-xl mb-1">🦮</span>
+            <span>Grande (+R$35)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Serviço -->
+      <div class="mb-6">
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet dark:text-areiaEscura mb-3">2. Serviço Desejado</label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <button onclick="setCalcServico('Banho Completo', 45)" id="serv-banho" class="calc-serv-btn active bg-white dark:bg-darkCard p-3.5 rounded-xl border-2 border-terracota font-bold text-xs text-left transition-all">
+            <div class="text-terracota font-extrabold text-sm mb-0.5">Banho Completo</div>
+            <div class="text-cinzaPet font-normal">A partir de R$ 45</div>
+          </button>
+          <button onclick="setCalcServico('Tosa Completa', 80)" id="serv-tosa" class="calc-serv-btn bg-white dark:bg-darkCard p-3.5 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 font-bold text-xs text-left transition-all">
+            <div class="text-marromPet dark:text-cremeQuente font-extrabold text-sm mb-0.5">Tosa Completa</div>
+            <div class="text-cinzaPet font-normal">A partir de R$ 80</div>
+          </button>
+          <button onclick="setCalcServico('Pacote Banho + Tosa', 110)" id="serv-pacote" class="calc-serv-btn bg-white dark:bg-darkCard p-3.5 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 font-bold text-xs text-left transition-all">
+            <div class="text-marromPet dark:text-cremeQuente font-extrabold text-sm mb-0.5">Banho + Tosa VIP</div>
+            <div class="text-cinzaPet font-normal">A partir de R$ 110</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Opcional Natural -->
+      <div class="mb-8 flex items-center justify-between p-3.5 bg-white dark:bg-darkCard rounded-xl border border-areiaEscura/30 dark:border-terracota/20">
+        <div class="flex items-center gap-3">
+          <input type="checkbox" id="chk-natural" onchange="updateCalcTotal()" class="w-5 h-5 accent-terracota rounded cursor-pointer">
+          <label for="chk-natural" class="font-body text-xs font-bold cursor-pointer">Adicionar Hidratação Natural Hipoalergênica (+R$ 20)</label>
+        </div>
+        <span class="font-body text-xs text-verdePet font-bold">Recomendado 🌿</span>
+      </div>
+
+      <!-- Total Output Box -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-terracota/10 dark:bg-terracota/20 rounded-xl border border-terracota/30">
+        <div>
+          <span class="font-body text-xs text-cinzaPet dark:text-areiaEscura uppercase font-bold block">Valor Estimado do Serviço</span>
+          <div class="flex items-baseline gap-2">
+            <span id="calc-total-val" class="font-display text-4xl font-extrabold text-terracota">R$ 45,00</span>
+            <span class="font-body text-xs text-cinzaPet font-semibold">(estimativa sem compromisso)</span>
+          </div>
+        </div>
+        <button onclick="bookCalculatedService()" class="btn-cta bg-laranjaVibrante text-white px-6 py-3.5 rounded-xl font-bold uppercase text-xs tracking-wider shadow-md w-full sm:w-auto">
+          Agendar com Este Valor ➔
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 3. SERVIÇOS DO BICHO SOLTO   -->
+<!-- ============================ -->
+<section id="servicos" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 scroll-reveal gap-4">
+      <div>
+        <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Nossa Especialidade</span>
+        <h2 class="font-display text-3xl md:text-5xl font-bold text-marromPet dark:text-cremeQuente mt-2">Serviços &amp; Cuidados Pet</h2>
+      </div>
+      
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2 p-1.5 bg-white/80 dark:bg-darkSurface/80 rounded-full border border-areiaEscura/30 dark:border-terracota/20">
+        <button onclick="switchTab(this, 'all')" class="tab-pill active px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Todos os Serviços</button>
+        <button onclick="switchTab(this, 'estetica')" class="tab-pill px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Banho &amp; Tosa ✂️</button>
+        <button onclick="switchTab(this, 'saude')" class="tab-pill px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Vacinas &amp; Saúde 🩺</button>
+        <button onclick="switchTab(this, 'produtos')" class="tab-pill px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Pet Shop 🛒</button>
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="cardsGrid" class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card 1: Banho & Tosa -->
+      <div class="card-item estetica service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 stroke-terracota icon-pet" viewBox="0 0 24 24"><path d="M6 6L18 18M6 18L18 6"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
+          </div>
+          <span class="bg-terracota/10 text-terracota text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Popular</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold mb-2">Banho &amp; Tosa</h3>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Procedimentos personalizados por porte e tipo de pelagem. Produtos hipoalergênicos e secagem morna.
+        </p>
+        <div class="space-y-1 mb-6 border-t border-areiaEscura/20 pt-3">
+          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Banho Completo</span><span class="text-terracota">a partir de R$ 45,00</span></div>
+          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Tosa Higiênica / Geral</span><span class="text-terracota">a partir de R$ 80,00</span></div>
+        </div>
+        <button onclick="openBookingModal('Banho & Tosa')" class="w-full btn-cta bg-terracota text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider">
+          Agendar Banho &amp; Tosa ➔
+        </button>
+      </div>
+
+      <!-- Card 2: Vacinação & Vermifugação -->
+      <div class="card-item saude service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 stroke-verdePet icon-pet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <span class="bg-verdePet/10 text-verdePet text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Prevenção</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold mb-2">Vacinação &amp; Vermifugação</h3>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Aplicação de vacinas essenciais e protocolos de vermifugação orientados pela nossa equipe qualificada.
+        </p>
+        <div class="space-y-1 mb-6 border-t border-areiaEscura/20 pt-3">
+          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Protocolos de Vacina</span><span class="text-verdePet">Preço conforme vacina</span></div>
+          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Orientação de Saúde</span><span class="text-verdePet">Inclusa</span></div>
+        </div>
+        <button onclick="openBookingModal('Vacinação & Vermifugação')" class="w-full btn-primary bg-verdePet text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider hover:bg-verdeHover">
+          Consultar Vacinas ➔
+        </button>
+      </div>
+
+      <!-- Card 3: Pet Shop & Acessórios -->
+      <div class="card-item produtos service-card bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 rounded-item bg-laranjaVibrante/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 stroke-laranjaVibrante icon-pet" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.7a2 2 0 0 0-.4-1.2l-2-2.7A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+          </div>
+          <span class="bg-laranjaVibrante/10 text-laranjaVibrante text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Boutique</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold mb-2">Pet Shop &amp; Acessórios</h3>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Rações selecionadas, cosméticos naturais, brinquedos e acessórios para cães e gatos com peles sensíveis.
+        </p>
+        <div class="space-y-1 mb-6 border-t border-areiaEscura/20 pt-3">
+          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Marcas Premium</span><span class="text-laranjaVibrante">Opções Naturais</span></div>
+          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Atendimento Glória</span><span class="text-laranjaVibrante">Pronta Entrega</span></div>
+        </div>
+        <a href="https://wa.me/5547997515499?text=Olá%20gostaria%20de%20saber%20sobre%20produtos%20do%20Pet%20Shop" target="_blank" rel="noopener" class="w-full btn-cta bg-laranjaVibrante text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider flex items-center justify-center gap-2">
+          Consultar Produtos no Whats
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 4. DIFERENCIAIS EXCLUSIVOS   -->
+<!-- ============================ -->
+<section id="diferenciais" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
+      <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Por que escolher o Bicho Solto?</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-3">Atendimento que Seu Pet Sente a Diferença</h2>
+      <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-2">Procedimentos pensados no bem-estar e na rotina do seu animal — sem pressa e com muito carinho.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Diferencial 1: Taxi Pet Pickup -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-terracota/15 flex items-center justify-center text-3xl mb-6">
+          🚚
+        </div>
+        <h3 class="font-display text-2xl font-bold mb-3">Retirada &amp; Entrega (Taxi Pet)</h3>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+          Comodidade total para os tutores: buscamos e entregamos seu pet com transporte seguro na região central e bairro Glória de Joinville.
+        </p>
+      </div>
+
+      <!-- Diferencial 2: Linha 100% Natural -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-verdePet/15 flex items-center justify-center text-3xl mb-6">
+          🌿
+        </div>
+        <h3 class="font-display text-2xl font-bold mb-3">Linha 100% Natural &amp; Hipoalergênica</h3>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+          Shampoos e cosméticos naturais selecionados especificamente para peles sensíveis ou propensas a alergias, sem agressão à pelagem.
+        </p>
+      </div>
+
+      <!-- Diferencial 3: Equipe Especializada -->
+      <div class="bg-cremeQuente dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-14 h-14 rounded-2xl bg-laranjaVibrante/15 flex items-center justify-center text-3xl mb-6">
+          🤝
+        </div>
+        <h3 class="font-display text-2xl font-bold mb-3">Equipe Treinada &amp; Rotina Gentil</h3>
+        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+          Profissionais capacitados para manejar cães e gatos com cuidado comportamental positivo, evitando traumas e estresse.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 5. AVALIAÇÕES DO GOOGLE      -->
+<!-- ============================ -->
+<section id="depoimentos" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 scroll-reveal">
+        <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Depoimentos Reais</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-3">Quem Já Passou por Aqui Aprova</h2>
+        
+        <!-- Google Stars Widget Badge -->
+        <div class="inline-flex items-center gap-3 bg-white dark:bg-darkSurface px-5 py-2.5 rounded-full border border-areiaEscura/30 dark:border-terracota/30 shadow-sm mt-4">
+          <span class="text-mostarda text-lg font-bold">★ 4.6</span>
+          <span class="font-body text-xs text-cinzaPet dark:text-areiaEscura font-semibold">no Google • <strong>595 avaliações verificadas</strong></span>
+        </div>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <blockquote class="bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
+          <div class="text-mostarda text-xl mb-3">★★★★★</div>
+          <p class="font-body text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
+            “Levo meu labrador sempre aqui no Bicho Solto. Atendimento carinhoso, ambiente super limpo e preço justo — recomendo de olhos fechados!”
+          </p>
+          <footer class="mt-6 pt-4 border-t border-areiaEscura/20 flex items-center justify-between">
+            <span class="font-display font-bold text-sm text-terracota">— Mariana S. (Tutor de Labrador)</span>
+            <span class="font-body text-xs text-cinzaPet font-semibold">Cliente Google</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
+          <div class="text-mostarda text-xl mb-3">★★★★★</div>
+          <p class="font-body text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
+            “Equipe experiente e produtos ótimos. Meu gato saiu extremamente tranquilo e cheiroso depois da tosa. Sensacional!”
+          </p>
+          <footer class="mt-6 pt-4 border-t border-areiaEscura/20 flex items-center justify-between">
+            <span class="font-display font-bold text-sm text-terracota">— Carlos T. (Tutor de Gato)</span>
+            <span class="font-body text-xs text-cinzaPet font-semibold">Cliente Google</span>
+          </footer>
+        </blockquote>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- 6. LOCALIZAÇÃO E CONTATO     -->
+<!-- ============================ -->
+<section id="contato" class="py-6 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Contact Details -->
+      <div class="scroll-reveal">
+        <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Fale Conosco</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-3 mb-6">Venha nos Visitar no Glória</h2>
+        
+        <div class="space-y-6">
+          <div class="flex items-start gap-4 p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
+            <div class="w-10 h-10 rounded-full bg-terracota/15 text-terracota flex items-center justify-center text-xl flex-shrink-0">📍</div>
+            <div>
+              <h4 class="font-display font-bold text-base">Endereço</h4>
+              <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura">R. Aquidaban, 730 - Glória, Joinville - SC</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
+            <div class="w-10 h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center text-xl flex-shrink-0">🕒</div>
+            <div>
+              <h4 class="font-display font-bold text-base">Horário de Atendimento</h4>
+              <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura">Terça a Sábado, das 09h às 18h (recomenda-se agendamento)</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
+            <div class="w-10 h-10 rounded-full bg-laranjaVibrante/15 text-laranjaVibrante flex items-center justify-center text-xl flex-shrink-0">📞</div>
+            <div>
+              <h4 class="font-display font-bold text-base">WhatsApp / Telefone</h4>
+              <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura font-bold">(47) 99751-5499</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20quero%20agendar%20um%20serviço" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs inline-flex items-center gap-3 shadow-md">
+            <span>Iniciar Conversa no WhatsApp</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Map & Location Box -->
+      <div class="scroll-reveal">
+        <div class="aspect-square rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-xl bg-cremeQuente dark:bg-darkSurface flex flex-col justify-between p-8 text-center relative paw-pattern">
+          <div class="my-auto">
+            <div class="w-20 h-20 mx-auto mb-4 bg-terracota/10 dark:bg-terracota/20 rounded-full flex items-center justify-center pulse-glow">
+              <span class="text-4xl">🗺️</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Bicho Solto Animal Care</h3>
+            <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-6 max-w-xs mx-auto">
+              Localização privilegiada no bairro Glória em Joinville. Fácil estacionamento e acesso.
+            </p>
+            <a href="https://maps.google.com/?q=R.+Aquidaban,+730+-+Glória,+Joinville+-+SC" target="_blank" rel="noopener" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-6 py-3 rounded-xl font-bold uppercase text-xs tracking-wider inline-block">
+              Abrir no Google Maps ➔
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================ -->
+<!-- FOOTER                       -->
+<!-- ============================ -->
+<footer class="py-12 px-4 md:px-6">
+  <div class="max-w-7xl mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-display text-2xl font-bold">Bicho Solto <span class="text-terracota italic">Animal Care</span></p>
+        <p class="font-body text-xs text-cinzaPet uppercase tracking-wider mt-1 font-semibold">R. Aquidaban, 730 - Glória, Joinville • (47) 99751-5499</p>
+        <p class="font-body text-xs text-cinzaPet mt-2">© 2026 Bicho Solto — Todos os direitos reservados.</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-primary bg-terracota text-white px-6 py-2.5 rounded-full font-body text-xs uppercase tracking-wider font-bold shadow-sm">
+          ↑ Voltar ao Topo
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ============================ -->
+<!-- MODAL DE AGENDAMENTO DIALOG  -->
+<!-- ============================ -->
+<dialog id="bookingModal" class="rounded-card p-0 shadow-2xl max-w-lg w-full bg-cremeQuente dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 text-marromPet dark:text-cremeQuente">
+  <div class="p-6 md:p-8">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-laranjaVibrante/20 text-laranjaVibrante flex items-center justify-center text-xl">🐾</div>
+        <div>
+          <h3 class="font-display text-xl font-bold">Agendamento Bicho Solto</h3>
+          <p class="font-body text-xs text-cinzaPet">Insira as informações para agendar via WhatsApp</p>
+        </div>
+      </div>
+      <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-areiaEscura/20 dark:bg-darkSurface flex items-center justify-center font-bold text-sm hover:bg-terracota hover:text-white transition-colors">✕</button>
+    </div>
+
+    <form onsubmit="submitBookingForm(event)" class="space-y-4">
+      <div>
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do Tutor</label>
+        <input type="text" id="modal-tutor" required placeholder="Ex: Mariana Silva" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
+      </div>
+      <div>
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do Pet &amp; Raça</label>
+        <input type="text" id="modal-pet" required placeholder="Ex: Mel (Golden Retriever)" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
+      </div>
+      <div>
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Serviço Desejado</label>
+        <select id="modal-servico" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
+          <option value="Banho Completo">Banho Completo (a partir de R$ 45)</option>
+          <option value="Tosa Completa / Higiênica">Tosa Completa / Higiênica (a partir de R$ 80)</option>
+          <option value="Banho + Tosa VIP">Banho + Tosa VIP</option>
+          <option value="Vacinação e Vermifugação">Vacinação / Vermifugação</option>
+          <option value="Consulta de Produtos Pet Shop">Consulta de Produtos Pet Shop</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Data Preferida</label>
+          <input type="date" id="modal-data" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-sm focus:outline-none focus:border-terracota">
+        </div>
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Horário</label>
+          <input type="time" id="modal-hora" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-sm focus:outline-none focus:border-terracota">
+        </div>
+      </div>
+      <button type="submit" class="w-full btn-cta bg-laranjaVibrante text-white py-3.5 rounded-xl font-bold uppercase text-sm tracking-wider shadow-md flex items-center justify-center gap-2">
+        <span>Enviar Agendamento no WhatsApp 🐾</span>
+      </button>
+    </form>
+  </div>
+</dialog>
+
+
+<!-- ============================ -->
+<!-- FLOATING WHATSAPP BUTTON     -->
+<!-- ============================ -->
+<a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20serviço" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 shadow-2xl group">
+  <div class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 active:scale-95 transition-transform pulse-glow">
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+  </div>
+</a>
+
+<!-- TOAST CONTAINER -->
+<div id="toast" class="fixed bottom-6 left-6 z-50 bg-marromPet dark:bg-darkSurface text-white px-6 py-4 rounded-card shadow-2xl border border-terracota/40 flex items-center gap-3 max-w-md">
+  <span class="text-xl">✨</span>
+  <span id="toastMessage" class="font-body text-sm font-bold">Mensagem do sistema</span>
+</div>
+
+<!-- ============================ -->
+<!-- JAVASCRIPT LOGIC             -->
+<!-- ============================ -->
+<script>
+  // 1. Scroll Reveal Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+  // 2. Theme Switcher (Dark / Light Mode)
+  function toggleTheme() {
+    const htmlEl = document.documentElement;
+    const isDark = htmlEl.classList.toggle('dark');
+    document.getElementById('themeIcon').textContent = isDark ? '☀️' : '🌙';
+    showToast(isDark ? '🌙 Modo escuro ativado!' : '☀️ Modo claro ativado!');
+  }
+
+  // 3. Toast Controller
+  let toastTimer;
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toastMessage').textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3200);
+  }
+
+  // 4. Modal Controller
+  const bookingModal = document.getElementById('bookingModal');
+  function openBookingModal(serviceName = '') {
+    if (serviceName) {
+      const select = document.getElementById('modal-servico');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.toLowerCase().includes(serviceName.toLowerCase())) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+    bookingModal.showModal();
+  }
+  function closeBookingModal() {
+    bookingModal.close();
+  }
+
+  bookingModal.addEventListener('click', (e) => {
+    const rect = bookingModal.getBoundingClientRect();
+    if (
+      e.clientX < rect.left ||
+      e.clientX > rect.right ||
+      e.clientY < rect.top ||
+      e.clientY > rect.bottom
+    ) {
+      bookingModal.close();
+    }
+  });
+
+  function submitBookingForm(e) {
+    e.preventDefault();
+    const tutor = document.getElementById('modal-tutor').value;
+    const pet = document.getElementById('modal-pet').value;
+    const servico = document.getElementById('modal-servico').value;
+    const data = document.getElementById('modal-data').value;
+    const hora = document.getElementById('modal-hora').value;
+
+    let text = `Olá Bicho Solto! Gostaria de agendar um serviço:\n\n- Tutor: ${tutor}\n- Pet: ${pet}\n- Serviço: ${servico}`;
+    if (data) text += `\n- Data: ${data}`;
+    if (hora) text += `\n- Horário: ${hora}`;
+
+    const waUrl = `https://wa.me/5547997515499?text=${encodeURIComponent(text)}`;
+    closeBookingModal();
+    window.open(waUrl, '_blank');
+  }
+
+  // 5. Category Tab Filter
+  function switchTab(buttonEl, category) {
+    document.querySelectorAll('.tab-pill').forEach(btn => btn.classList.remove('active'));
+    buttonEl.classList.add('active');
+
+    const cards = document.querySelectorAll('.card-item');
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          card.style.display = 'none';
+        }
+      }, 200);
+    });
+  }
+
+  // 6. Interactive Calculator Logic
+  let calcPorteExtra = 0;
+  let calcServicoNome = 'Banho Completo';
+  let calcServicoBase = 45;
+
+  function setCalcPorte(porteId, extraPrice) {
+    calcPorteExtra = extraPrice;
+    document.querySelectorAll('.calc-porte-btn').forEach(btn => {
+      btn.classList.remove('active', 'border-terracota', 'border-2');
+      btn.classList.add('border-areiaEscura/30', 'dark:border-terracota/30');
+    });
+    const btnActive = document.getElementById(`porte-${porteId}`);
+    btnActive.classList.add('active', 'border-terracota', 'border-2');
+    btnActive.classList.remove('border-areiaEscura/30', 'dark:border-terracota/30');
+    updateCalcTotal();
+  }
+
+  function setCalcServico(nomeServico, basePrice) {
+    calcServicoNome = nomeServico;
+    calcServicoBase = basePrice;
+    document.querySelectorAll('.calc-serv-btn').forEach(btn => {
+      btn.classList.remove('active', 'border-terracota', 'border-2');
+      btn.classList.add('border-areiaEscura/30', 'dark:border-terracota/30');
+      btn.querySelector('.text-terracota')?.classList.replace('text-terracota', 'text-marromPet');
+    });
+    let servId = 'serv-banho';
+    if (basePrice === 80) servId = 'serv-tosa';
+    if (basePrice === 110) servId = 'serv-pacote';
+    
+    const btnActive = document.getElementById(servId);
+    btnActive.classList.add('active', 'border-terracota', 'border-2');
+    btnActive.classList.remove('border-areiaEscura/30', 'dark:border-terracota/30');
+    updateCalcTotal();
+  }
+
+  function updateCalcTotal() {
+    const isNaturalChecked = document.getElementById('chk-natural').checked;
+    const naturalPrice = isNaturalChecked ? 20 : 0;
+    const total = calcServicoBase + calcPorteExtra + naturalPrice;
+
+    document.getElementById('calc-total-val').textContent = `R$ ${total},00`;
+  }
+
+  function bookCalculatedService() {
+    const isNaturalChecked = document.getElementById('chk-natural').checked;
+    const total = document.getElementById('calc-total-val').textContent;
+    let msg = `Olá Bicho Solto! Fiz uma simulação no site para ${calcServicoNome} (Valor estimado: ${total})`;
+    if (isNaturalChecked) msg += ` incluindo Hidratação Natural Hipoalergênica`;
+    msg += `. Gostaria de verificar horários disponíveis!`;
+
+    window.open(`https://wa.me/5547997515499?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
