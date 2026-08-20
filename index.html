@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bicho Solto — Animal Care | Pet shop em Joinville</title>
-<meta name="description" content="Banho, tosa, vacinação e produtos naturais para pets em Joinville. R. Aquidaban, 730 - Glória. Agende pelo WhatsApp (47) 99751-5499.">
+<title>Bicho Solto — Clínica Veterinária 24h & Pet Shop em Joinville</title>
+<meta name="description" content="Clínica Veterinária 24h, creche, hotel, banho, tosa e produtos naturais em Joinville. R. Aquidaban, 730 - Glória. Whats (47) 99751-5499 / Fix (47) 3432-1792.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 <script>
@@ -224,7 +224,7 @@ tailwind.config = {
       <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracota flex items-center justify-center text-white font-bold font-display text-sm sm:text-base shadow-md group-hover:scale-105 transition-transform flex-shrink-0">BS</div>
       <div>
         <span class="font-display font-bold text-base sm:text-xl leading-none block text-marromPet dark:text-cremeQuente">Bicho Solto</span>
-        <span class="font-body text-[9px] sm:text-[11px] text-terracota font-bold uppercase tracking-widest block">Animal Care — Joinville</span>
+        <span class="font-body text-[9px] sm:text-[11px] text-terracota font-bold uppercase tracking-widest block">Clínica Vet &amp; Animal Care</span>
       </div>
     </a>
 
@@ -238,13 +238,19 @@ tailwind.config = {
     </nav>
 
     <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Emergency Badge Desktop -->
+      <span class="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-600 font-bold text-xs">
+        <span class="w-2 h-2 rounded-full bg-red-500 badge-bounce"></span>
+        Plantão 24h
+      </span>
+
       <!-- Dark/Light Theme Switcher -->
       <button onclick="toggleTheme()" id="themeToggle" aria-label="Alternar tema" class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-areia/50 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 text-sm sm:text-base transition-all hover:scale-105 active:scale-95 flex-shrink-0">
         <span id="themeIcon">🌙</span>
       </button>
 
       <!-- WhatsApp CTA Header -->
-      <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20serviço" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-full font-body font-bold text-[11px] sm:text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-1.5 sm:gap-2 shadow-sm flex-shrink-0">
+      <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20atendimento" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-full font-body font-bold text-[11px] sm:text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-1.5 sm:gap-2 shadow-sm flex-shrink-0">
         <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
         <span class="hidden sm:inline">(47) 99751-5499</span>
         <span class="sm:hidden">WhatsApp</span>
@@ -264,25 +270,25 @@ tailwind.config = {
         
         <!-- Text Column (Left) -->
         <div class="lg:col-span-7 scroll-reveal">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracota/10 border border-terracota/20 mb-4 sm:mb-6">
-            <span class="w-2 h-2 rounded-full bg-verdePet badge-bounce"></span>
-            <span class="font-body text-terracota text-[11px] sm:text-xs font-bold uppercase tracking-wider">Pet shop e banho e tosa em Joinville — SC</span>
+          <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-terracota/10 border border-terracota/20 mb-4 sm:mb-6">
+            <span class="w-2 h-2 rounded-full bg-red-500 badge-bounce"></span>
+            <span class="font-body text-terracota text-[11px] sm:text-xs font-bold uppercase tracking-wider">Clínica Veterinária 24h · Creche &amp; Hotel · Banho e Tosa em Joinville — SC</span>
           </div>
 
           <h1 class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-bold text-marromPet dark:text-cremeQuente">
-            Amor, carinho e <br class="hidden sm:block">
-            <span class="text-terracota italic font-normal">respeito</span> em cada banho.
+            Saúde, carinho e <br class="hidden sm:block">
+            <span class="text-terracota italic font-normal">emergência 24h</span> pro seu pet.
           </h1>
 
           <p class="font-body text-sm sm:text-base md:text-lg text-cinzaPet dark:text-areiaEscura mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-            Na <strong>Bicho Solto Animal Care</strong>, seu pet é atendido com paciência, produtos naturais hipoalergênicos e equipe altamente especializada. Oferecemos banho, tosa, vacinação e seleção de produtos selecionados no bairro Glória.
+            Na <strong>Bicho Solto Animal Care</strong>, oferecemos um complexo completo para seu pet: <strong>Clínica Veterinária com plantão 24h de emergência, Creche e Hotel com hospedagem dedicada</strong>, além de banho e tosa com cosméticos naturais hipoalergênicos no bairro Glória.
           </p>
 
           <!-- Buttons CTAs -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
             <button onclick="openBookingModal('Banho e tosa')" class="btn-cta bg-laranjaVibrante text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-body font-bold uppercase tracking-wide text-xs sm:text-sm hover:bg-laranjaHover flex items-center justify-center gap-2.5 shadow-md">
               <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
-              <span>Agendar banho pelo WhatsApp</span>
+              <span>Agendar no WhatsApp</span>
             </button>
             <a href="#calculadora" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl font-body font-bold uppercase tracking-wide text-xs sm:text-sm text-center hover:bg-terracota/10">
               Simular valor online ➔
@@ -296,12 +302,12 @@ tailwind.config = {
               <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>595 avaliações</strong> no Google</div>
             </div>
             <div class="flex items-center gap-2.5">
-              <div class="text-verdePet text-lg sm:text-xl flex-shrink-0">🌿</div>
-              <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>Xampus naturais</strong> hipoalergênicos</div>
+              <div class="text-red-500 text-lg sm:text-xl flex-shrink-0">🚨</div>
+              <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>Emergência 24h</strong> &amp; Clínica Vet</div>
             </div>
             <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
-              <div class="text-laranjaVibrante text-lg sm:text-xl flex-shrink-0">🚗</div>
-              <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>Táxi Pet</strong> (busca e entrega) em Joinville</div>
+              <div class="text-verdePet text-lg sm:text-xl flex-shrink-0">🏨</div>
+              <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>Creche e Hotel</strong> com recreação</div>
             </div>
           </div>
 
@@ -330,7 +336,7 @@ tailwind.config = {
                 </svg>
               </div>
               <h3 class="font-display text-xl sm:text-2xl font-bold text-marromPet dark:text-cremeQuente">Bicho Solto</h3>
-              <p class="font-detalhe text-xl sm:text-2xl text-terracota font-bold mt-0.5">Cuidado familiar com carinho</p>
+              <p class="font-detalhe text-xl sm:text-2xl text-terracota font-bold mt-0.5">Clínica Veterinária &amp; Animal Care</p>
             </div>
 
             <!-- Card Quick Price Info -->
@@ -349,12 +355,12 @@ tailwind.config = {
 
           <!-- Floating Badge -->
           <div class="mt-4 sm:absolute sm:-bottom-5 sm:-left-5 bg-white dark:bg-darkCard p-3.5 sm:p-4 rounded-card shadow-lg border border-areiaEscura/30 dark:border-terracota/30 flex items-center gap-3 backdrop-blur-md">
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center font-bold text-base sm:text-lg flex-shrink-0">
-              🐶
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-red-500/15 text-red-500 flex items-center justify-center font-bold text-base sm:text-lg flex-shrink-0">
+              🏥
             </div>
             <div>
-              <p class="font-body text-xs sm:text-sm font-bold text-marromPet dark:text-cremeQuente">Atendimento a cães e gatos</p>
-              <p class="font-body text-[10px] sm:text-[11px] text-cinzaPet">Ambiente calmo e aconchegante</p>
+              <p class="font-body text-xs sm:text-sm font-bold text-marromPet dark:text-cremeQuente">Clínica Vet com Emergência 24h</p>
+              <p class="font-body text-[10px] sm:text-[11px] text-cinzaPet">Atendimento imediato e equipe médica</p>
             </div>
           </div>
         </div>
@@ -453,83 +459,120 @@ tailwind.config = {
     
     <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-8 sm:mb-12 scroll-reveal gap-4">
       <div>
-        <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Nossa especialidade</span>
-        <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-marromPet dark:text-cremeQuente mt-2">Serviços e cuidados pet</h2>
+        <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Complexo de Saúde &amp; Bem-Estar</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-marromPet dark:text-cremeQuente mt-2">Nossos serviços para seu pet</h2>
       </div>
       
       <!-- Category Filter Tabs -->
       <div class="flex flex-wrap gap-1.5 p-1 bg-white/80 dark:bg-darkSurface/80 rounded-2xl sm:rounded-full border border-areiaEscura/30 dark:border-terracota/20 w-full sm:w-auto">
         <button onclick="switchTab(this, 'all')" class="tab-pill active px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Todos</button>
-        <button onclick="switchTab(this, 'estetica')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Banho e tosa ✂️</button>
-        <button onclick="switchTab(this, 'saude')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Vacinas 🩺</button>
-        <button onclick="switchTab(this, 'produtos')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Pet shop 🛒</button>
+        <button onclick="switchTab(this, 'vet')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Clínica Vet 24h 🏥</button>
+        <button onclick="switchTab(this, 'hotel')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Creche &amp; Hotel 🏨</button>
+        <button onclick="switchTab(this, 'estetica')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Banho &amp; Tosa ✂️</button>
       </div>
     </div>
 
     <!-- Cards Grid -->
-    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
+    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
 
-      <!-- Card 1: Banho e tosa -->
-      <div class="card-item estetica service-card bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
-        <div class="flex items-center justify-between mb-3.5">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-terracota icon-pet" viewBox="0 0 24 24"><path d="M6 6L18 18M6 18L18 6"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
+      <!-- Card 1: Clínica Veterinária & Emergência 24h -->
+      <div class="card-item vet service-card bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3.5">
+            <div class="w-10 h-10 rounded-item bg-red-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="text-xl">🏥</span>
+            </div>
+            <span class="bg-red-500/10 text-red-600 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full border border-red-500/20">Plantão 24h</span>
           </div>
-          <span class="bg-terracota/10 text-terracota text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Popular</span>
+          <h3 class="font-display text-xl font-bold mb-2">Clínica Veterinária 24h</h3>
+          <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+            Consultas, vacinas, exames e atendimento emergencial 24 horas com equipe médica preparada para qualquer momento.
+          </p>
         </div>
-        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2">Banho e tosa</h3>
-        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
-          Procedimentos personalizados por porte e tipo de pelagem. Produtos hipoalergênicos e secagem morna.
-        </p>
-        <div class="space-y-1 mb-5 border-t border-areiaEscura/20 pt-3">
-          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Banho completo</span><span class="text-terracota">a partir de R$ 45,00</span></div>
-          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Tosa higiênica e geral</span><span class="text-terracota">a partir de R$ 80,00</span></div>
+        <div>
+          <div class="space-y-1 mb-4 border-t border-areiaEscura/20 pt-3 text-[11px] font-bold">
+            <div class="flex justify-between"><span class="text-cinzaPet">Emergências</span><span class="text-red-500">Pronto Atendimento</span></div>
+            <div class="flex justify-between"><span class="text-cinzaPet">Vacinas e Exames</span><span class="text-verdePet">Completos</span></div>
+          </div>
+          <button onclick="openBookingModal('Consulta Veterinária')" class="w-full btn-primary bg-red-600 text-white py-2.5 rounded-xl font-bold uppercase text-xs tracking-wider text-center hover:bg-red-700">
+            Falar com a Clínica ➔
+          </button>
         </div>
-        <button onclick="openBookingModal('Banho e tosa')" class="w-full btn-cta bg-terracota text-white py-2.5 sm:py-3 rounded-xl font-bold uppercase text-xs tracking-wider text-center">
-          Agendar banho e tosa ➔
-        </button>
       </div>
 
-      <!-- Card 2: Vacinação e vermifugação -->
-      <div class="card-item saude service-card bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
-        <div class="flex items-center justify-between mb-3.5">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-verdePet icon-pet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <!-- Card 2: Creche e Hotel Pet -->
+      <div class="card-item hotel service-card bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3.5">
+            <div class="w-10 h-10 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="text-xl">🏨</span>
+            </div>
+            <span class="bg-verdePet/10 text-verdePet text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Hospedagem</span>
           </div>
-          <span class="bg-verdePet/10 text-verdePet text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Prevenção</span>
+          <h3 class="font-display text-xl font-bold mb-2">Creche e Hotel Pet</h3>
+          <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+            Espaço amplo, seguro e monitorado para o seu cão ou gato brincar durante o dia ou se hospedar com todo conforto.
+          </p>
         </div>
-        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2">Vacinação e vermifugação</h3>
-        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
-          Aplicação de vacinas essenciais e protocolos de vermifugação orientados pela nossa equipe qualificada.
-        </p>
-        <div class="space-y-1 mb-5 border-t border-areiaEscura/20 pt-3">
-          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Protocolos de vacinas</span><span class="text-verdePet">Preço conforme vacina</span></div>
-          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Orientação de saúde</span><span class="text-verdePet">Inclusa</span></div>
+        <div>
+          <div class="space-y-1 mb-4 border-t border-areiaEscura/20 pt-3 text-[11px] font-bold">
+            <div class="flex justify-between"><span class="text-cinzaPet">Recreação Diária</span><span class="text-verdePet">Monitorada</span></div>
+            <div class="flex justify-between"><span class="text-cinzaPet">Hospedagem</span><span class="text-verdePet">Quartos Cobertos</span></div>
+          </div>
+          <button onclick="openBookingModal('Creche e Hotel')" class="w-full btn-primary bg-verdePet text-white py-2.5 rounded-xl font-bold uppercase text-xs tracking-wider text-center hover:bg-verdeHover">
+            Reservar Vaga no Hotel ➔
+          </button>
         </div>
-        <button onclick="openBookingModal('Vacinação e vermifugação')" class="w-full btn-primary bg-verdePet text-white py-2.5 sm:py-3 rounded-xl font-bold uppercase text-xs tracking-wider hover:bg-verdeHover text-center">
-          Consultar vacinas ➔
-        </button>
       </div>
 
-      <!-- Card 3: Pet shop e acessórios -->
-      <div class="card-item produtos service-card bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
-        <div class="flex items-center justify-between mb-3.5">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-item bg-laranjaVibrante/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-laranjaVibrante icon-pet" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.7a2 2 0 0 0-.4-1.2l-2-2.7A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+      <!-- Card 3: Banho e Tosa -->
+      <div class="card-item estetica service-card bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3.5">
+            <div class="w-10 h-10 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 stroke-terracota icon-pet" viewBox="0 0 24 24"><path d="M6 6L18 18M6 18L18 6"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
+            </div>
+            <span class="bg-terracota/10 text-terracota text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Estética</span>
           </div>
-          <span class="bg-laranjaVibrante/10 text-laranjaVibrante text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Boutique</span>
+          <h3 class="font-display text-xl font-bold mb-2">Banho e Tosa</h3>
+          <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+            Higienização completa, tosa higiênica e cortes específicos. Xampus 100% naturais e secagem com temperatura controlada.
+          </p>
         </div>
-        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2">Pet shop e acessórios</h3>
-        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
-          Rações selecionadas, cosméticos naturais, brinquedos e acessórios para cães e gatos com peles sensíveis.
-        </p>
-        <div class="space-y-1 mb-5 border-t border-areiaEscura/20 pt-3">
-          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Marcas selecionadas</span><span class="text-laranjaVibrante">Opções naturais</span></div>
-          <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Atendimento no Glória</span><span class="text-laranjaVibrante">Pronta entrega</span></div>
+        <div>
+          <div class="space-y-1 mb-4 border-t border-areiaEscura/20 pt-3 text-[11px] font-bold">
+            <div class="flex justify-between"><span class="text-cinzaPet">Banho completo</span><span class="text-terracota">a partir de R$ 45,00</span></div>
+            <div class="flex justify-between"><span class="text-cinzaPet">Tosa higiênica e geral</span><span class="text-terracota">a partir de R$ 80,00</span></div>
+          </div>
+          <button onclick="openBookingModal('Banho e tosa')" class="w-full btn-cta bg-terracota text-white py-2.5 rounded-xl font-bold uppercase text-xs tracking-wider text-center">
+            Agendar Banho ➔
+          </button>
         </div>
-        <a href="https://wa.me/5547997515499?text=Olá%20gostaria%20de%20saber%20sobre%20produtos%20do%20Pet%20Shop" target="_blank" rel="noopener" class="w-full btn-cta bg-laranjaVibrante text-white py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[11px] sm:text-xs tracking-wider flex items-center justify-center gap-1.5 text-center leading-snug">
-          <span>Consultar produtos no WhatsApp</span>
-        </a>
+      </div>
+
+      <!-- Card 4: Pet Shop & Boutique -->
+      <div class="card-item produtos service-card bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3.5">
+            <div class="w-10 h-10 rounded-item bg-laranjaVibrante/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6 stroke-laranjaVibrante icon-pet" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.7a2 2 0 0 0-.4-1.2l-2-2.7A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+            </div>
+            <span class="bg-laranjaVibrante/10 text-laranjaVibrante text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Boutique</span>
+          </div>
+          <h3 class="font-display text-xl font-bold mb-2">Pet Shop &amp; Boutique</h3>
+          <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+            Rações super premium, vermífugos, cosméticos e brinquedos selecionados à pronta entrega no Glória.
+          </p>
+        </div>
+        <div>
+          <div class="space-y-1 mb-4 border-t border-areiaEscura/20 pt-3 text-[11px] font-bold">
+            <div class="flex justify-between"><span class="text-cinzaPet">Marcas Selecionadas</span><span class="text-laranjaVibrante">Super Premium</span></div>
+            <div class="flex justify-between"><span class="text-cinzaPet">Atendimento Glória</span><span class="text-laranjaVibrante">Pronta entrega</span></div>
+          </div>
+          <a href="https://wa.me/5547997515499?text=Olá%20gostaria%20de%20saber%20sobre%20produtos%20do%20Pet%20Shop" target="_blank" rel="noopener" class="w-full btn-cta bg-laranjaVibrante text-white py-2.5 rounded-xl font-bold uppercase text-[11px] tracking-wider flex items-center justify-center text-center">
+            <span>Consultar Produtos</span>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -545,8 +588,8 @@ tailwind.config = {
     
     <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-14 scroll-reveal">
       <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Por que escolher o Bicho Solto?</span>
-      <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-2.5">Atendimento em que o seu pet sente a diferença</h2>
-      <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mt-1.5">Procedimentos pensados no bem-estar e na rotina do seu animal — sem pressa e com muito carinho.</p>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-2.5">Estrutura completa em um só lugar</h2>
+      <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mt-1.5">Tranquilidade e comodidade total para os tutores de Joinville com atendimento veterinário e estética.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
@@ -558,29 +601,29 @@ tailwind.config = {
         </div>
         <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Retirada e entrega (Táxi Pet)</h3>
         <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
-          Comodidade total para os tutores: buscamos e entregamos seu pet com transporte seguro na região central e bairro Glória de Joinville.
+          Buscamos e entregamos seu pet em transporte seguro na região central e bairro Glória de Joinville com toda comodidade.
         </p>
       </div>
 
-      <!-- Diferencial 2: Linha 100% natural -->
+      <!-- Diferencial 2: Emergência 24h -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-verdePet/15 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
-          🌿
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-red-500/15 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+          🚨
         </div>
-        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Linha 100% natural e hipoalergênica</h3>
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Pronto-atendimento veterinário 24h</h3>
         <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
-          Xampus e cosméticos naturais selecionados especificamente para peles sensíveis ou propensas a alergias, sem agressão à pelagem.
+          Veterinários a postos para qualquer situação de urgência ou emergência, garantindo a segurança contínua do seu animal.
         </p>
       </div>
 
       <!-- Diferencial 3: Equipe especializada -->
       <div class="bg-cremeQuente dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-laranjaVibrante/15 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
-          🤝
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-verdePet/15 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+          🌿
         </div>
-        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Equipe treinada e rotina gentil</h3>
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Cosméticos 100% naturais &amp; Creche</h3>
         <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
-          Profissionais capacitados para manejar cães e gatos com cuidado comportamental positivo, evitando traumas e estresse.
+          Xampus desenvolvidos para peles sensíveis e áreas de lazer planejadas para socialização e recreação de cães e gatos.
         </p>
       </div>
 
@@ -603,7 +646,7 @@ tailwind.config = {
         <!-- Google Stars Widget Badge -->
         <div class="inline-flex items-center gap-2.5 sm:gap-3 bg-white dark:bg-darkSurface px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-areiaEscura/30 dark:border-terracota/30 shadow-sm mt-3">
           <span class="text-mostarda text-base sm:text-lg font-bold">★ 4.6</span>
-          <span class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura font-semibold">no Google • <strong>595 avaliações</strong></span>
+          <span class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura font-semibold">no Google • <strong>595 avaliações verificadas</strong></span>
         </div>
       </div>
 
@@ -613,7 +656,7 @@ tailwind.config = {
         <blockquote class="bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
           <div class="text-mostarda text-lg sm:text-xl mb-2.5">★★★★★</div>
           <p class="font-body text-sm sm:text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
-            “Levo meu labrador sempre aqui no Bicho Solto. Atendimento carinhoso, ambiente super limpo e preço justo — recomendo de olhos fechados!”
+            “Levo meu labrador sempre aqui no Bicho Solto. Atendimento carinhoso na clínica e no banho, ambiente super limpo e preço justo!”
           </p>
           <footer class="mt-4 sm:mt-6 pt-3.5 border-t border-areiaEscura/20 flex items-center justify-between">
             <span class="font-display font-bold text-xs sm:text-sm text-terracota">— Mariana S. (tutora de Labrador)</span>
@@ -624,7 +667,7 @@ tailwind.config = {
         <blockquote class="bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
           <div class="text-mostarda text-lg sm:text-xl mb-2.5">★★★★★</div>
           <p class="font-body text-sm sm:text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
-            “Equipe experiente e produtos ótimos. Meu gato saiu extremamente tranquilo e cheiroso depois da tosa. Sensacional!”
+            “Fui atendida na emergência veterinária da clínica de madrugada. Atendimento impecável e equipe médica nota mil. Recomendo!”
           </p>
           <footer class="mt-4 sm:mt-6 pt-3.5 border-t border-areiaEscura/20 flex items-center justify-between">
             <span class="font-display font-bold text-xs sm:text-sm text-terracota">— Carlos T. (tutor de gato)</span>
@@ -662,18 +705,21 @@ tailwind.config = {
           </div>
 
           <div class="flex items-start gap-3.5 p-3.5 sm:p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
-            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center text-lg sm:text-xl flex-shrink-0">🕒</div>
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-red-500/15 text-red-600 flex items-center justify-center text-lg sm:text-xl flex-shrink-0">🕒</div>
             <div>
-              <h4 class="font-display font-bold text-sm sm:text-base">Horário de atendimento</h4>
-              <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura">Terça a Sábado, das 09h às 18h (recomenda-se agendamento)</p>
+              <h4 class="font-display font-bold text-sm sm:text-base">Horário de funcionamento</h4>
+              <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura"><strong>Clínica Vet &amp; Emergência: 24 Horas</strong><br>Banho, Tosa e Pet Shop: Terça a Sábado, das 09h às 18h</p>
             </div>
           </div>
 
           <div class="flex items-start gap-3.5 p-3.5 sm:p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-laranjaVibrante/15 text-laranjaVibrante flex items-center justify-center text-lg sm:text-xl flex-shrink-0">📞</div>
             <div>
-              <h4 class="font-display font-bold text-sm sm:text-base">WhatsApp e Telefone</h4>
-              <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura font-bold">(47) 99751-5499</p>
+              <h4 class="font-display font-bold text-sm sm:text-base">Telefones &amp; WhatsApp</h4>
+              <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura">
+                <strong>WhatsApp:</strong> (47) 99751-5499<br>
+                <strong>Telefone Fixo:</strong> (47) 3432-1792
+              </p>
             </div>
           </div>
         </div>
@@ -695,7 +741,7 @@ tailwind.config = {
             </div>
             <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Bicho Solto Animal Care</h3>
             <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-5 max-w-xs mx-auto">
-              Localização privileged no bairro Glória em Joinville. Fácil estacionamento e acesso.
+              Clínica Veterinária 24h, Creche, Hotel e Pet Shop na R. Aquidaban, 730 - Glória, Joinville.
             </p>
             <a href="https://maps.google.com/?q=R.+Aquidaban,+730+-+Glória,+Joinville+-+SC" target="_blank" rel="noopener" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-xs tracking-wider inline-block">
               Abrir no Google Maps ➔
@@ -716,8 +762,8 @@ tailwind.config = {
   <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-6 sm:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-center md:text-left">
       <div>
-        <p class="font-display text-xl sm:text-2xl font-bold">Bicho Solto <span class="text-terracota italic">Animal Care</span></p>
-        <p class="font-body text-[11px] sm:text-xs text-cinzaPet uppercase tracking-wider mt-1 font-semibold">R. Aquidaban, 730 - Glória, Joinville • (47) 99751-5499</p>
+        <p class="font-display text-xl sm:text-2xl font-bold">Bicho Solto <span class="text-terracota italic">Clínica Vet &amp; Animal Care</span></p>
+        <p class="font-body text-[11px] sm:text-xs text-cinzaPet uppercase tracking-wider mt-1 font-semibold">R. Aquidaban, 730 - Glória, Joinville • (47) 99751-5499 / (47) 3432-1792</p>
         <p class="font-body text-[11px] sm:text-xs text-cinzaPet mt-1.5">© 2026 Bicho Solto — Todos os direitos reservados.</p>
       </div>
       <div class="flex items-center gap-4">
@@ -739,7 +785,7 @@ tailwind.config = {
       <div class="flex items-center gap-3">
         <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-laranjaVibrante/20 text-laranjaVibrante flex items-center justify-center text-lg sm:text-xl flex-shrink-0">🐾</div>
         <div>
-          <h3 class="font-display text-lg sm:text-xl font-bold">Agendamento Bicho Solto</h3>
+          <h3 class="font-display text-lg sm:text-xl font-bold">Atendimento Bicho Solto</h3>
           <p class="font-body text-[11px] sm:text-xs text-cinzaPet">Insira as informações para agendar via WhatsApp</p>
         </div>
       </div>
@@ -758,10 +804,10 @@ tailwind.config = {
       <div>
         <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Serviço desejado</label>
         <select id="modal-servico" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3.5 py-2.5 sm:py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-xs sm:text-sm">
+          <option value="Consulta Veterinária / Emergência 24h">Consulta Veterinária / Emergência 24h</option>
+          <option value="Reserva de Creche ou Hotel">Reserva de Creche ou Hotel Pet</option>
           <option value="Banho completo">Banho completo (a partir de R$ 45)</option>
           <option value="Tosa completa / higiênica">Tosa completa / higiênica (a partir de R$ 80)</option>
-          <option value="Banho e tosa VIP">Banho e tosa VIP</option>
-          <option value="Vacinação e vermifugação">Vacinação e vermifugação</option>
           <option value="Consulta de produtos de pet shop">Consulta de produtos de pet shop</option>
         </select>
       </div>
@@ -891,7 +937,7 @@ tailwind.config = {
       card.style.transform = 'scale(0.95)';
       setTimeout(() => {
         if (category === 'all' || card.classList.contains(category)) {
-          card.style.display = 'block';
+          card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
