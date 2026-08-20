@@ -218,13 +218,13 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- HEADER NAVEGAÇÃO              -->
 <!-- ============================ -->
-<header class="sticky top-0 z-50 bg-cremeQuente/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-areiaEscura/30 dark:border-terracota/20 px-4 md:px-[2cm] py-3.5 transition-colors duration-300">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto flex items-center justify-between gap-4">
-    <a href="#home" class="flex items-center gap-3 group">
-      <div class="w-10 h-10 rounded-full bg-terracota flex items-center justify-center text-white font-bold font-display shadow-md group-hover:scale-105 transition-transform">BS</div>
+<header class="sticky top-0 z-50 bg-cremeQuente/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-areiaEscura/30 dark:border-terracota/20 px-3 sm:px-4 md:px-[2cm] py-3 transition-colors duration-300">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto flex items-center justify-between gap-2 sm:gap-4">
+    <a href="#home" class="flex items-center gap-2 sm:gap-3 group">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracota flex items-center justify-center text-white font-bold font-display text-sm sm:text-base shadow-md group-hover:scale-105 transition-transform flex-shrink-0">BS</div>
       <div>
-        <span class="font-display font-bold text-xl leading-none block text-marromPet dark:text-cremeQuente">Bicho Solto</span>
-        <span class="font-body text-[11px] text-terracota font-bold uppercase tracking-widest block">Animal Care — Joinville</span>
+        <span class="font-display font-bold text-base sm:text-xl leading-none block text-marromPet dark:text-cremeQuente">Bicho Solto</span>
+        <span class="font-body text-[9px] sm:text-[11px] text-terracota font-bold uppercase tracking-widest block">Animal Care — Joinville</span>
       </div>
     </a>
 
@@ -237,15 +237,15 @@ tailwind.config = {
       <a href="#contato" class="hover:text-terracota transition-colors">Contato</a>
     </nav>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 sm:gap-3">
       <!-- Dark/Light Theme Switcher -->
-      <button onclick="toggleTheme()" id="themeToggle" aria-label="Alternar tema" class="flex items-center justify-center w-10 h-10 rounded-full bg-areia/50 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 text-base transition-all hover:scale-105 active:scale-95">
+      <button onclick="toggleTheme()" id="themeToggle" aria-label="Alternar tema" class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-areia/50 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 text-sm sm:text-base transition-all hover:scale-105 active:scale-95 flex-shrink-0">
         <span id="themeIcon">🌙</span>
       </button>
 
       <!-- WhatsApp CTA Header -->
-      <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20serviço" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-5 py-2.5 rounded-full font-body font-bold text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-2 shadow-sm">
-        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20serviço" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-full font-body font-bold text-[11px] sm:text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-1.5 sm:gap-2 shadow-sm flex-shrink-0">
+        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
         <span class="hidden sm:inline">(47) 99751-5499</span>
         <span class="sm:hidden">WhatsApp</span>
       </a>
@@ -257,51 +257,51 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 1. HERO SECTION NOVO LAYOUT  -->
 <!-- ============================ -->
-<section id="home" class="py-6 px-4 md:px-[2cm]">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra overflow-hidden shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern relative transition-colors duration-400">
-    <div class="relative z-10 min-h-[82vh] flex items-center px-6 md:px-12 lg:px-16 py-12 md:py-16">
-      <div class="w-full grid lg:grid-cols-12 gap-12 items-center">
+<section id="home" class="py-4 md:py-6 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra overflow-hidden shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern relative transition-colors duration-400">
+    <div class="relative z-10 min-h-0 md:min-h-[82vh] flex items-center px-4 sm:px-8 md:px-12 lg:px-16 py-8 md:py-16">
+      <div class="w-full grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Text Column (Left) -->
         <div class="lg:col-span-7 scroll-reveal">
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-terracota/10 border border-terracota/20 mb-6">
-            <span class="w-2.5 h-2.5 rounded-full bg-verdePet badge-bounce"></span>
-            <span class="font-body text-terracota text-xs font-bold uppercase tracking-wider">Pet shop e banho e tosa em Joinville — SC</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracota/10 border border-terracota/20 mb-4 sm:mb-6">
+            <span class="w-2 h-2 rounded-full bg-verdePet badge-bounce"></span>
+            <span class="font-body text-terracota text-[11px] sm:text-xs font-bold uppercase tracking-wider">Pet shop e banho e tosa em Joinville — SC</span>
           </div>
 
-          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] mb-6 font-bold text-marromPet dark:text-cremeQuente">
+          <h1 class="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 sm:mb-6 font-bold text-marromPet dark:text-cremeQuente">
             Amor, carinho e <br class="hidden sm:block">
             <span class="text-terracota italic font-normal">respeito</span> em cada banho.
           </h1>
 
-          <p class="font-body text-base md:text-lg text-cinzaPet dark:text-areiaEscura mb-8 max-w-2xl leading-relaxed">
+          <p class="font-body text-sm sm:text-base md:text-lg text-cinzaPet dark:text-areiaEscura mb-6 sm:mb-8 max-w-2xl leading-relaxed">
             Na <strong>Bicho Solto Animal Care</strong>, seu pet é atendido com paciência, produtos naturais hipoalergênicos e equipe altamente especializada. Oferecemos banho, tosa, vacinação e seleção de produtos selecionados no bairro Glória.
           </p>
 
           <!-- Buttons CTAs -->
-          <div class="flex flex-wrap items-center gap-4 mb-10">
-            <button onclick="openBookingModal('Banho e tosa')" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-laranjaHover flex items-center gap-3 shadow-md">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+            <button onclick="openBookingModal('Banho e tosa')" class="btn-cta bg-laranjaVibrante text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-body font-bold uppercase tracking-wide text-xs sm:text-sm hover:bg-laranjaHover flex items-center justify-center gap-2.5 shadow-md">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
               <span>Agendar banho pelo WhatsApp</span>
             </button>
-            <a href="#calculadora" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-6 py-3.5 rounded-xl font-body font-bold uppercase tracking-wide text-sm hover:bg-terracota/10">
+            <a href="#calculadora" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl font-body font-bold uppercase tracking-wide text-xs sm:text-sm text-center hover:bg-terracota/10">
               Simular valor online ➔
             </a>
           </div>
 
           <!-- Trust Badges Bar -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-areiaEscura/30 dark:border-terracota/20">
-            <div class="flex items-center gap-3">
-              <div class="text-terracota text-xl font-bold">★ 4.6</div>
-              <div class="font-body text-xs text-cinzaPet dark:text-areiaEscura"><strong>595 avaliações</strong> no Google</div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-areiaEscura/30 dark:border-terracota/20">
+            <div class="flex items-center gap-2.5">
+              <div class="text-terracota text-lg sm:text-xl font-bold flex-shrink-0">★ 4.6</div>
+              <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>595 avaliações</strong> no Google</div>
             </div>
-            <div class="flex items-center gap-3">
-              <div class="text-verdePet text-xl">🌿</div>
-              <div class="font-body text-xs text-cinzaPet dark:text-areiaEscura"><strong>Xampus naturais</strong> hipoalergênicos</div>
+            <div class="flex items-center gap-2.5">
+              <div class="text-verdePet text-lg sm:text-xl flex-shrink-0">🌿</div>
+              <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>Xampus naturais</strong> hipoalergênicos</div>
             </div>
-            <div class="flex items-center gap-3 col-span-2 sm:col-span-1">
-              <div class="text-laranjaVibrante text-xl">🚗</div>
-              <div class="font-body text-xs text-cinzaPet dark:text-areiaEscura"><strong>Táxi Pet</strong> (busca e entrega) em Joinville</div>
+            <div class="flex items-center gap-2.5 col-span-2 sm:col-span-1">
+              <div class="text-laranjaVibrante text-lg sm:text-xl flex-shrink-0">🚗</div>
+              <div class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura"><strong>Táxi Pet</strong> (busca e entrega) em Joinville</div>
             </div>
           </div>
 
@@ -309,19 +309,19 @@ tailwind.config = {
 
         <!-- Interactive Right Visual Card -->
         <div class="lg:col-span-5 relative scroll-reveal">
-          <div class="aspect-[4/5] rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-2xl bg-gradient-to-br from-areia/50 via-cremeQuente to-areiaEscura/30 dark:from-darkSurface dark:to-darkCard flex flex-col items-center justify-between p-8 relative group">
+          <div class="rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-xl bg-gradient-to-br from-areia/50 via-cremeQuente to-areiaEscura/30 dark:from-darkSurface dark:to-darkCard flex flex-col items-center justify-between p-5 sm:p-8 relative group">
             
-            <div class="w-full flex items-center justify-between">
-              <span class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-terracota border border-areiaEscura/30">
+            <div class="w-full flex items-center justify-between gap-2 mb-4 sm:mb-0">
+              <span class="bg-white/80 dark:bg-darkCard/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold text-terracota border border-areiaEscura/30 truncate">
                 📍 R. Aquidaban, 730 - Glória
               </span>
-              <span class="w-3 h-3 rounded-full bg-verdePet badge-bounce"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-verdePet badge-bounce flex-shrink-0"></span>
             </div>
 
             <!-- Pet Animated Icon Box -->
-            <div class="text-center my-6">
-              <div class="w-28 h-28 mx-auto mb-4 bg-terracota/10 dark:bg-terracota/20 rounded-full flex items-center justify-center pulse-glow cursor-pointer" onclick="showToast('🐾 Au Au! O Bicho Solto ama seu pet!')">
-                <svg class="w-16 h-16 icon-pet stroke-terracota paw-wiggle" viewBox="0 0 64 64" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <div class="text-center my-4 sm:my-6">
+              <div class="w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-3 bg-terracota/10 dark:bg-terracota/20 rounded-full flex items-center justify-center pulse-glow cursor-pointer" onclick="showToast('🐾 Au Au! O Bicho Solto ama seu pet!')">
+                <svg class="w-12 h-12 sm:w-16 sm:h-16 icon-pet stroke-terracota paw-wiggle" viewBox="0 0 64 64" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <ellipse cx="32" cy="38" rx="10" ry="8"/>
                   <ellipse cx="18" cy="26" rx="5" ry="6"/>
                   <ellipse cx="46" cy="26" rx="5" ry="6"/>
@@ -329,18 +329,18 @@ tailwind.config = {
                   <ellipse cx="54" cy="40" rx="4" ry="5"/>
                 </svg>
               </div>
-              <h3 class="font-display text-2xl font-bold text-marromPet dark:text-cremeQuente">Bicho Solto</h3>
-              <p class="font-detalhe text-2xl text-terracota font-bold mt-1">Cuidado familiar com carinho</p>
+              <h3 class="font-display text-xl sm:text-2xl font-bold text-marromPet dark:text-cremeQuente">Bicho Solto</h3>
+              <p class="font-detalhe text-xl sm:text-2xl text-terracota font-bold mt-0.5">Cuidado familiar com carinho</p>
             </div>
 
             <!-- Card Quick Price Info -->
-            <div class="w-full bg-white/90 dark:bg-darkCard/90 backdrop-blur-md p-4 rounded-item border border-areiaEscura/30 dark:border-terracota/30 shadow-lg text-center">
-              <p class="font-body text-xs text-cinzaPet uppercase font-bold tracking-wider">Banho completo a partir de</p>
-              <div class="flex items-baseline justify-center gap-1.5 mt-1">
-                <span class="font-display text-3xl font-extrabold text-laranjaVibrante">R$ 45,00</span>
-                <span class="font-body text-xs text-cinzaPet">/ porte pequeno</span>
+            <div class="w-full bg-white/90 dark:bg-darkCard/90 backdrop-blur-md p-3.5 sm:p-4 rounded-item border border-areiaEscura/30 dark:border-terracota/30 shadow-lg text-center">
+              <p class="font-body text-[10px] sm:text-xs text-cinzaPet uppercase font-bold tracking-wider">Banho completo a partir de</p>
+              <div class="flex items-baseline justify-center gap-1.5 mt-0.5">
+                <span class="font-display text-2xl sm:text-3xl font-extrabold text-laranjaVibrante">R$ 45,00</span>
+                <span class="font-body text-[11px] sm:text-xs text-cinzaPet">/ porte pequeno</span>
               </div>
-              <button onclick="openBookingModal('Banho completo')" class="w-full mt-3 btn-cta bg-terracota text-white py-2 rounded-xl text-xs font-bold uppercase tracking-wider">
+              <button onclick="openBookingModal('Banho completo')" class="w-full mt-2.5 btn-cta bg-terracota text-white py-2 rounded-xl text-xs font-bold uppercase tracking-wider">
                 Reservar horário ➔
               </button>
             </div>
@@ -348,13 +348,13 @@ tailwind.config = {
           </div>
 
           <!-- Floating Badge -->
-          <div class="absolute -bottom-5 -left-5 bg-white dark:bg-darkCard p-4 rounded-card shadow-xl border border-areiaEscura/30 dark:border-terracota/30 flex items-center gap-3 backdrop-blur-md transform hover:scale-105 transition-transform">
-            <div class="w-10 h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center font-bold text-lg">
+          <div class="mt-4 sm:absolute sm:-bottom-5 sm:-left-5 bg-white dark:bg-darkCard p-3.5 sm:p-4 rounded-card shadow-lg border border-areiaEscura/30 dark:border-terracota/30 flex items-center gap-3 backdrop-blur-md">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center font-bold text-base sm:text-lg flex-shrink-0">
               🐶
             </div>
             <div>
-              <p class="font-body text-xs font-bold text-marromPet dark:text-cremeQuente">Atendimento a cães e gatos</p>
-              <p class="font-body text-[11px] text-cinzaPet">Ambiente calmo e aconchegante</p>
+              <p class="font-body text-xs sm:text-sm font-bold text-marromPet dark:text-cremeQuente">Atendimento a cães e gatos</p>
+              <p class="font-body text-[10px] sm:text-[11px] text-cinzaPet">Ambiente calmo e aconchegante</p>
             </div>
           </div>
         </div>
@@ -368,74 +368,74 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 2. CALCULADORA INTERATIVA    -->
 <!-- ============================ -->
-<section id="calculadora" class="py-6 px-4 md:px-[2cm]">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-14 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="calculadora" class="py-4 md:py-6 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 lg:p-16 py-10 md:py-14 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
-    <div class="text-center max-w-2xl mx-auto mb-10 scroll-reveal">
-      <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Simulador de valores</span>
-      <h2 class="font-display text-3xl md:text-4xl font-bold mt-3">Calcule a estimativa para o seu pet</h2>
-      <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-2">Escolha o porte do pet e o serviço desejado para estimar o valor instantaneamente:</p>
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 scroll-reveal">
+      <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Simulador de valores</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold mt-2.5">Calcule a estimativa para o seu pet</h2>
+      <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mt-1.5">Escolha o porte do pet e o serviço desejado para estimar o valor instantaneamente:</p>
     </div>
 
-    <div class="max-w-4xl mx-auto bg-cremeQuente dark:bg-darkSurface p-6 md:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+    <div class="max-w-4xl mx-auto bg-cremeQuente dark:bg-darkSurface p-4 sm:p-6 md:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
       
       <!-- Step 1: Porte -->
-      <div class="mb-6">
-        <label class="block font-body text-xs font-bold uppercase text-cinzaPet dark:text-areiaEscura mb-3">1. Porte do animal</label>
-        <div class="grid grid-cols-3 gap-3">
-          <button onclick="setCalcPorte('pequeno', 0)" id="porte-pequeno" class="calc-porte-btn active bg-white dark:bg-darkCard p-3 rounded-xl border-2 border-terracota text-center font-bold text-xs uppercase transition-all">
-            <span class="block text-xl mb-1">🐩</span>
+      <div class="mb-5 sm:mb-6">
+        <label class="block font-body text-[11px] sm:text-xs font-bold uppercase text-cinzaPet dark:text-areiaEscura mb-2.5">1. Porte do animal</label>
+        <div class="grid grid-cols-3 gap-2 sm:gap-3">
+          <button onclick="setCalcPorte('pequeno', 0)" id="porte-pequeno" class="calc-porte-btn active bg-white dark:bg-darkCard p-2.5 sm:p-3 rounded-xl border-2 border-terracota text-center font-bold text-[11px] sm:text-xs uppercase transition-all">
+            <span class="block text-lg sm:text-xl mb-0.5">🐩</span>
             <span>Pequeno</span>
           </button>
-          <button onclick="setCalcPorte('medio', 15)" id="porte-medio" class="calc-porte-btn bg-white dark:bg-darkCard p-3 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 text-center font-bold text-xs uppercase transition-all">
-            <span class="block text-xl mb-1">🐕</span>
+          <button onclick="setCalcPorte('medio', 15)" id="porte-medio" class="calc-porte-btn bg-white dark:bg-darkCard p-2.5 sm:p-3 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 text-center font-bold text-[11px] sm:text-xs uppercase transition-all">
+            <span class="block text-lg sm:text-xl mb-0.5">🐕</span>
             <span>Médio (+R$ 15)</span>
           </button>
-          <button onclick="setCalcPorte('grande', 35)" id="porte-grande" class="calc-porte-btn bg-white dark:bg-darkCard p-3 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 text-center font-bold text-xs uppercase transition-all">
-            <span class="block text-xl mb-1">🦮</span>
+          <button onclick="setCalcPorte('grande', 35)" id="porte-grande" class="calc-porte-btn bg-white dark:bg-darkCard p-2.5 sm:p-3 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 text-center font-bold text-[11px] sm:text-xs uppercase transition-all">
+            <span class="block text-lg sm:text-xl mb-0.5">🦮</span>
             <span>Grande (+R$ 35)</span>
           </button>
         </div>
       </div>
 
       <!-- Step 2: Serviço -->
-      <div class="mb-6">
-        <label class="block font-body text-xs font-bold uppercase text-cinzaPet dark:text-areiaEscura mb-3">2. Serviço desejado</label>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <button onclick="setCalcServico('Banho completo', 45)" id="serv-banho" class="calc-serv-btn active bg-white dark:bg-darkCard p-3.5 rounded-xl border-2 border-terracota font-bold text-xs text-left transition-all">
-            <div class="text-terracota font-extrabold text-sm mb-0.5">Banho completo</div>
-            <div class="text-cinzaPet font-normal">A partir de R$ 45</div>
+      <div class="mb-5 sm:mb-6">
+        <label class="block font-body text-[11px] sm:text-xs font-bold uppercase text-cinzaPet dark:text-areiaEscura mb-2.5">2. Serviço desejado</label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
+          <button onclick="setCalcServico('Banho completo', 45)" id="serv-banho" class="calc-serv-btn active bg-white dark:bg-darkCard p-3 sm:p-3.5 rounded-xl border-2 border-terracota font-bold text-xs text-left transition-all">
+            <div class="text-terracota font-extrabold text-xs sm:text-sm mb-0.5">Banho completo</div>
+            <div class="text-cinzaPet font-normal text-[11px]">A partir de R$ 45</div>
           </button>
-          <button onclick="setCalcServico('Tosa completa', 80)" id="serv-tosa" class="calc-serv-btn bg-white dark:bg-darkCard p-3.5 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 font-bold text-xs text-left transition-all">
-            <div class="text-marromPet dark:text-cremeQuente font-extrabold text-sm mb-0.5">Tosa completa</div>
-            <div class="text-cinzaPet font-normal">A partir de R$ 80</div>
+          <button onclick="setCalcServico('Tosa completa', 80)" id="serv-tosa" class="calc-serv-btn bg-white dark:bg-darkCard p-3 sm:p-3.5 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 font-bold text-xs text-left transition-all">
+            <div class="text-marromPet dark:text-cremeQuente font-extrabold text-xs sm:text-sm mb-0.5">Tosa completa</div>
+            <div class="text-cinzaPet font-normal text-[11px]">A partir de R$ 80</div>
           </button>
-          <button onclick="setCalcServico('Pacote banho e tosa', 110)" id="serv-pacote" class="calc-serv-btn bg-white dark:bg-darkCard p-3.5 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 font-bold text-xs text-left transition-all">
-            <div class="text-marromPet dark:text-cremeQuente font-extrabold text-sm mb-0.5">Banho e tosa VIP</div>
-            <div class="text-cinzaPet font-normal">A partir de R$ 110</div>
+          <button onclick="setCalcServico('Pacote banho e tosa', 110)" id="serv-pacote" class="calc-serv-btn bg-white dark:bg-darkCard p-3 sm:p-3.5 rounded-xl border border-areiaEscura/30 dark:border-terracota/30 font-bold text-xs text-left transition-all">
+            <div class="text-marromPet dark:text-cremeQuente font-extrabold text-xs sm:text-sm mb-0.5">Banho e tosa VIP</div>
+            <div class="text-cinzaPet font-normal text-[11px]">A partir de R$ 110</div>
           </button>
         </div>
       </div>
 
       <!-- Step 3: Opcional Natural -->
-      <div class="mb-8 flex items-center justify-between p-3.5 bg-white dark:bg-darkCard rounded-xl border border-areiaEscura/30 dark:border-terracota/20">
-        <div class="flex items-center gap-3">
-          <input type="checkbox" id="chk-natural" onchange="updateCalcTotal()" class="w-5 h-5 accent-terracota rounded cursor-pointer">
+      <div class="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 p-3 sm:p-3.5 bg-white dark:bg-darkCard rounded-xl border border-areiaEscura/30 dark:border-terracota/20">
+        <div class="flex items-center gap-2.5">
+          <input type="checkbox" id="chk-natural" onchange="updateCalcTotal()" class="w-4 h-4 sm:w-5 sm:h-5 accent-terracota rounded cursor-pointer flex-shrink-0">
           <label for="chk-natural" class="font-body text-xs font-bold cursor-pointer">Adicionar hidratação natural hipoalergênica (+R$ 20)</label>
         </div>
-        <span class="font-body text-xs text-verdePet font-bold">Recomendado 🌿</span>
+        <span class="font-body text-[11px] sm:text-xs text-verdePet font-bold">Recomendado 🌿</span>
       </div>
 
       <!-- Total Output Box -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-terracota/10 dark:bg-terracota/20 rounded-xl border border-terracota/30">
-        <div>
-          <span class="font-body text-xs text-cinzaPet dark:text-areiaEscura uppercase font-bold block">Valor estimado do serviço</span>
-          <div class="flex items-baseline gap-2">
-            <span id="calc-total-val" class="font-display text-4xl font-extrabold text-terracota">R$ 45,00</span>
-            <span class="font-body text-xs text-cinzaPet font-semibold">(estimativa sem compromisso)</span>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 bg-terracota/10 dark:bg-terracota/20 rounded-xl border border-terracota/30">
+        <div class="text-center sm:text-left">
+          <span class="font-body text-[10px] sm:text-xs text-cinzaPet dark:text-areiaEscura uppercase font-bold block">Valor estimado do serviço</span>
+          <div class="flex items-baseline justify-center sm:justify-start gap-2">
+            <span id="calc-total-val" class="font-display text-3xl sm:text-4xl font-extrabold text-terracota">R$ 45,00</span>
+            <span class="font-body text-[11px] text-cinzaPet font-semibold">(sem compromisso)</span>
           </div>
         </div>
-        <button onclick="bookCalculatedService()" class="btn-cta bg-laranjaVibrante text-white px-6 py-3.5 rounded-xl font-bold uppercase text-xs tracking-wider shadow-md w-full sm:w-auto">
+        <button onclick="bookCalculatedService()" class="btn-cta bg-laranjaVibrante text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl font-bold uppercase text-xs tracking-wider shadow-md w-full sm:w-auto text-center">
           Agendar com este valor ➔
         </button>
       </div>
@@ -448,87 +448,87 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 3. SERVIÇOS DO BICHO SOLTO   -->
 <!-- ============================ -->
-<section id="servicos" class="py-6 px-4 md:px-[2cm]">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="servicos" class="py-4 md:py-6 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 lg:p-16 py-10 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
-    <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 scroll-reveal gap-4">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-8 sm:mb-12 scroll-reveal gap-4">
       <div>
-        <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Nossa especialidade</span>
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-marromPet dark:text-cremeQuente mt-2">Serviços e cuidados pet</h2>
+        <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Nossa especialidade</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-marromPet dark:text-cremeQuente mt-2">Serviços e cuidados pet</h2>
       </div>
       
       <!-- Category Filter Tabs -->
-      <div class="flex flex-wrap gap-2 p-1.5 bg-white/80 dark:bg-darkSurface/80 rounded-full border border-areiaEscura/30 dark:border-terracota/20">
-        <button onclick="switchTab(this, 'all')" class="tab-pill active px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Todos os serviços</button>
-        <button onclick="switchTab(this, 'estetica')" class="tab-pill px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Banho e tosa ✂️</button>
-        <button onclick="switchTab(this, 'saude')" class="tab-pill px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Vacinas e saúde 🩺</button>
-        <button onclick="switchTab(this, 'produtos')" class="tab-pill px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">Pet shop 🛒</button>
+      <div class="flex flex-wrap gap-1.5 p-1 bg-white/80 dark:bg-darkSurface/80 rounded-2xl sm:rounded-full border border-areiaEscura/30 dark:border-terracota/20 w-full sm:w-auto">
+        <button onclick="switchTab(this, 'all')" class="tab-pill active px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Todos</button>
+        <button onclick="switchTab(this, 'estetica')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Banho e tosa ✂️</button>
+        <button onclick="switchTab(this, 'saude')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Vacinas 🩺</button>
+        <button onclick="switchTab(this, 'produtos')" class="tab-pill px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full font-body text-[11px] sm:text-xs uppercase tracking-wider font-bold">Pet shop 🛒</button>
       </div>
     </div>
 
     <!-- Cards Grid -->
-    <div id="cardsGrid" class="grid md:grid-cols-3 gap-8">
+    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
 
       <!-- Card 1: Banho e tosa -->
-      <div class="card-item estetica service-card bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
-        <div class="flex items-center justify-between mb-4">
-          <div class="w-12 h-12 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 stroke-terracota icon-pet" viewBox="0 0 24 24"><path d="M6 6L18 18M6 18L18 6"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
+      <div class="card-item estetica service-card bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+        <div class="flex items-center justify-between mb-3.5">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-item bg-terracota/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-terracota icon-pet" viewBox="0 0 24 24"><path d="M6 6L18 18M6 18L18 6"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>
           </div>
           <span class="bg-terracota/10 text-terracota text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Popular</span>
         </div>
-        <h3 class="font-display text-2xl font-bold mb-2">Banho e tosa</h3>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2">Banho e tosa</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
           Procedimentos personalizados por porte e tipo de pelagem. Produtos hipoalergênicos e secagem morna.
         </p>
-        <div class="space-y-1 mb-6 border-t border-areiaEscura/20 pt-3">
+        <div class="space-y-1 mb-5 border-t border-areiaEscura/20 pt-3">
           <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Banho completo</span><span class="text-terracota">a partir de R$ 45,00</span></div>
           <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Tosa higiênica e geral</span><span class="text-terracota">a partir de R$ 80,00</span></div>
         </div>
-        <button onclick="openBookingModal('Banho e tosa')" class="w-full btn-cta bg-terracota text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider">
+        <button onclick="openBookingModal('Banho e tosa')" class="w-full btn-cta bg-terracota text-white py-2.5 sm:py-3 rounded-xl font-bold uppercase text-xs tracking-wider text-center">
           Agendar banho e tosa ➔
         </button>
       </div>
 
       <!-- Card 2: Vacinação e vermifugação -->
-      <div class="card-item saude service-card bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
-        <div class="flex items-center justify-between mb-4">
-          <div class="w-12 h-12 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 stroke-verdePet icon-pet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div class="card-item saude service-card bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+        <div class="flex items-center justify-between mb-3.5">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-item bg-verdePet/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-verdePet icon-pet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
           <span class="bg-verdePet/10 text-verdePet text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Prevenção</span>
         </div>
-        <h3 class="font-display text-2xl font-bold mb-2">Vacinação e vermifugação</h3>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2">Vacinação e vermifugação</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
           Aplicação de vacinas essenciais e protocolos de vermifugação orientados pela nossa equipe qualificada.
         </p>
-        <div class="space-y-1 mb-6 border-t border-areiaEscura/20 pt-3">
+        <div class="space-y-1 mb-5 border-t border-areiaEscura/20 pt-3">
           <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Protocolos de vacinas</span><span class="text-verdePet">Preço conforme vacina</span></div>
           <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Orientação de saúde</span><span class="text-verdePet">Inclusa</span></div>
         </div>
-        <button onclick="openBookingModal('Vacinação e vermifugação')" class="w-full btn-primary bg-verdePet text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider hover:bg-verdeHover">
+        <button onclick="openBookingModal('Vacinação e vermifugação')" class="w-full btn-primary bg-verdePet text-white py-2.5 sm:py-3 rounded-xl font-bold uppercase text-xs tracking-wider hover:bg-verdeHover text-center">
           Consultar vacinas ➔
         </button>
       </div>
 
       <!-- Card 3: Pet shop e acessórios -->
-      <div class="card-item produtos service-card bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
-        <div class="flex items-center justify-between mb-4">
-          <div class="w-12 h-12 rounded-item bg-laranjaVibrante/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 stroke-laranjaVibrante icon-pet" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.7a2 2 0 0 0-.4-1.2l-2-2.7A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
+      <div class="card-item produtos service-card bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 group cursor-pointer scroll-reveal">
+        <div class="flex items-center justify-between mb-3.5">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-item bg-laranjaVibrante/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-laranjaVibrante icon-pet" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.1 6h17.8"/><path d="M3.4 5.5a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.7a2 2 0 0 0-.4-1.2l-2-2.7A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
           </div>
           <span class="bg-laranjaVibrante/10 text-laranjaVibrante text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">Boutique</span>
         </div>
-        <h3 class="font-display text-2xl font-bold mb-2">Pet shop e acessórios</h3>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2">Pet shop e acessórios</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
           Rações selecionadas, cosméticos naturais, brinquedos e acessórios para cães e gatos com peles sensíveis.
         </p>
-        <div class="space-y-1 mb-6 border-t border-areiaEscura/20 pt-3">
+        <div class="space-y-1 mb-5 border-t border-areiaEscura/20 pt-3">
           <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Marcas selecionadas</span><span class="text-laranjaVibrante">Opções naturais</span></div>
           <div class="flex justify-between font-body text-xs font-bold"><span class="text-cinzaPet">Atendimento no Glória</span><span class="text-laranjaVibrante">Pronta entrega</span></div>
         </div>
-        <a href="https://wa.me/5547997515499?text=Olá%20gostaria%20de%20saber%20sobre%20produtos%20do%20Pet%20Shop" target="_blank" rel="noopener" class="w-full btn-cta bg-laranjaVibrante text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider flex items-center justify-center gap-2">
-          Consultar produtos no WhatsApp
+        <a href="https://wa.me/5547997515499?text=Olá%20gostaria%20de%20saber%20sobre%20produtos%20do%20Pet%20Shop" target="_blank" rel="noopener" class="w-full btn-cta bg-laranjaVibrante text-white py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[11px] sm:text-xs tracking-wider flex items-center justify-center gap-1.5 text-center leading-snug">
+          <span>Consultar produtos no WhatsApp</span>
         </a>
       </div>
 
@@ -540,46 +540,46 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 4. DIFERENCIAIS EXCLUSIVOS   -->
 <!-- ============================ -->
-<section id="diferenciais" class="py-6 px-4 md:px-[2cm]">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="diferenciais" class="py-4 md:py-6 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 lg:p-16 py-10 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
-    <div class="text-center max-w-3xl mx-auto mb-14 scroll-reveal">
-      <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Por que escolher o Bicho Solto?</span>
-      <h2 class="font-display text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-3">Atendimento em que o seu pet sente a diferença</h2>
-      <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mt-2">Procedimentos pensados no bem-estar e na rotina do seu animal — sem pressa e com muito carinho.</p>
+    <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-14 scroll-reveal">
+      <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Por que escolher o Bicho Solto?</span>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-2.5">Atendimento em que o seu pet sente a diferença</h2>
+      <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mt-1.5">Procedimentos pensados no bem-estar e na rotina do seu animal — sem pressa e com muito carinho.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
 
       <!-- Diferencial 1: Táxi Pet -->
-      <div class="bg-cremeQuente dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-terracota/15 flex items-center justify-center text-3xl mb-6">
+      <div class="bg-cremeQuente dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-terracota/15 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
           🚚
         </div>
-        <h3 class="font-display text-2xl font-bold mb-3">Retirada e entrega (Táxi Pet)</h3>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Retirada e entrega (Táxi Pet)</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
           Comodidade total para os tutores: buscamos e entregamos seu pet com transporte seguro na região central e bairro Glória de Joinville.
         </p>
       </div>
 
       <!-- Diferencial 2: Linha 100% natural -->
-      <div class="bg-cremeQuente dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-verdePet/15 flex items-center justify-center text-3xl mb-6">
+      <div class="bg-cremeQuente dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-verdePet/15 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
           🌿
         </div>
-        <h3 class="font-display text-2xl font-bold mb-3">Linha 100% natural e hipoalergênica</h3>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Linha 100% natural e hipoalergênica</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
           Xampus e cosméticos naturais selecionados especificamente para peles sensíveis ou propensas a alergias, sem agressão à pelagem.
         </p>
       </div>
 
       <!-- Diferencial 3: Equipe especializada -->
-      <div class="bg-cremeQuente dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-laranjaVibrante/15 flex items-center justify-center text-3xl mb-6">
+      <div class="bg-cremeQuente dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal hover:-translate-y-2 transition-transform duration-300">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-laranjaVibrante/15 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
           🤝
         </div>
-        <h3 class="font-display text-2xl font-bold mb-3">Equipe treinada e rotina gentil</h3>
-        <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+        <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Equipe treinada e rotina gentil</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
           Profissionais capacitados para manejar cães e gatos com cuidado comportamental positivo, evitando traumas e estresse.
         </p>
       </div>
@@ -592,43 +592,43 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 5. AVALIAÇÕES DO GOOGLE      -->
 <!-- ============================ -->
-<section id="depoimentos" class="py-6 px-4 md:px-[2cm]">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="depoimentos" class="py-4 md:py-6 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 lg:p-16 py-10 md:py-20 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     <div class="relative z-10">
       
-      <div class="text-center max-w-2xl mx-auto mb-12 scroll-reveal">
-        <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Depoimentos reais</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-3">Quem já passou por aqui aprova</h2>
+      <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12 scroll-reveal">
+        <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Depoimentos reais</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-2.5">Quem já passou por aqui aprova</h2>
         
         <!-- Google Stars Widget Badge -->
-        <div class="inline-flex items-center gap-3 bg-white dark:bg-darkSurface px-5 py-2.5 rounded-full border border-areiaEscura/30 dark:border-terracota/30 shadow-sm mt-4">
-          <span class="text-mostarda text-lg font-bold">★ 4.6</span>
-          <span class="font-body text-xs text-cinzaPet dark:text-areiaEscura font-semibold">no Google • <strong>595 avaliações verificadas</strong></span>
+        <div class="inline-flex items-center gap-2.5 sm:gap-3 bg-white dark:bg-darkSurface px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-areiaEscura/30 dark:border-terracota/30 shadow-sm mt-3">
+          <span class="text-mostarda text-base sm:text-lg font-bold">★ 4.6</span>
+          <span class="font-body text-[11px] sm:text-xs text-cinzaPet dark:text-areiaEscura font-semibold">no Google • <strong>595 avaliações</strong></span>
         </div>
       </div>
 
       <!-- Testimonials Grid -->
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 max-w-5xl mx-auto">
         
-        <blockquote class="bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
-          <div class="text-mostarda text-xl mb-3">★★★★★</div>
-          <p class="font-body text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
+        <blockquote class="bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
+          <div class="text-mostarda text-lg sm:text-xl mb-2.5">★★★★★</div>
+          <p class="font-body text-sm sm:text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
             “Levo meu labrador sempre aqui no Bicho Solto. Atendimento carinhoso, ambiente super limpo e preço justo — recomendo de olhos fechados!”
           </p>
-          <footer class="mt-6 pt-4 border-t border-areiaEscura/20 flex items-center justify-between">
-            <span class="font-display font-bold text-sm text-terracota">— Mariana S. (tutora de Labrador)</span>
-            <span class="font-body text-xs text-cinzaPet font-semibold">Cliente Google</span>
+          <footer class="mt-4 sm:mt-6 pt-3.5 border-t border-areiaEscura/20 flex items-center justify-between">
+            <span class="font-display font-bold text-xs sm:text-sm text-terracota">— Mariana S. (tutora de Labrador)</span>
+            <span class="font-body text-[11px] text-cinzaPet font-semibold">Google</span>
           </footer>
         </blockquote>
 
-        <blockquote class="bg-white dark:bg-darkSurface p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
-          <div class="text-mostarda text-xl mb-3">★★★★★</div>
-          <p class="font-body text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
+        <blockquote class="bg-white dark:bg-darkSurface p-5 sm:p-8 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm relative scroll-reveal">
+          <div class="text-mostarda text-lg sm:text-xl mb-2.5">★★★★★</div>
+          <p class="font-body text-sm sm:text-base text-marromPet dark:text-cremeQuente leading-relaxed italic">
             “Equipe experiente e produtos ótimos. Meu gato saiu extremamente tranquilo e cheiroso depois da tosa. Sensacional!”
           </p>
-          <footer class="mt-6 pt-4 border-t border-areiaEscura/20 flex items-center justify-between">
-            <span class="font-display font-bold text-sm text-terracota">— Carlos T. (tutor de gato)</span>
-            <span class="font-body text-xs text-cinzaPet font-semibold">Cliente Google</span>
+          <footer class="mt-4 sm:mt-6 pt-3.5 border-t border-areiaEscura/20 flex items-center justify-between">
+            <span class="font-display font-bold text-xs sm:text-sm text-terracota">— Carlos T. (tutor de gato)</span>
+            <span class="font-body text-[11px] text-cinzaPet font-semibold">Google</span>
           </footer>
         </blockquote>
 
@@ -642,44 +642,44 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- 6. LOCALIZAÇÃO E CONTATO     -->
 <!-- ============================ -->
-<section id="contato" class="py-6 px-4 md:px-[2cm]">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-dobra p-8 md:p-12 lg:p-16 py-16 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+<section id="contato" class="py-4 md:py-6 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 lg:p-16 py-10 md:py-20 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
     
-    <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
       
       <!-- Contact Details -->
       <div class="scroll-reveal">
-        <span class="font-body text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Fale conosco</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-3 mb-6">Venha nos visitar no bairro Glória</h2>
+        <span class="font-body text-[11px] sm:text-xs text-terracota uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20">Fale conosco</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-marromPet dark:text-cremeQuente mt-2.5 mb-5 sm:mb-6">Venha nos visitar no bairro Glória</h2>
         
-        <div class="space-y-6">
-          <div class="flex items-start gap-4 p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
-            <div class="w-10 h-10 rounded-full bg-terracota/15 text-terracota flex items-center justify-center text-xl flex-shrink-0">📍</div>
+        <div class="space-y-4 sm:space-y-6">
+          <div class="flex items-start gap-3.5 p-3.5 sm:p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracota/15 text-terracota flex items-center justify-center text-lg sm:text-xl flex-shrink-0">📍</div>
             <div>
-              <h4 class="font-display font-bold text-base">Endereço</h4>
-              <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura">R. Aquidaban, 730 - Glória, Joinville - SC</p>
+              <h4 class="font-display font-bold text-sm sm:text-base">Endereço</h4>
+              <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura">R. Aquidaban, 730 - Glória, Joinville - SC</p>
             </div>
           </div>
 
-          <div class="flex items-start gap-4 p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
-            <div class="w-10 h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center text-xl flex-shrink-0">🕒</div>
+          <div class="flex items-start gap-3.5 p-3.5 sm:p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-verdePet/15 text-verdePet flex items-center justify-center text-lg sm:text-xl flex-shrink-0">🕒</div>
             <div>
-              <h4 class="font-display font-bold text-base">Horário de atendimento</h4>
-              <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura">Terça a Sábado, das 09h às 18h (recomenda-se agendamento)</p>
+              <h4 class="font-display font-bold text-sm sm:text-base">Horário de atendimento</h4>
+              <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura">Terça a Sábado, das 09h às 18h (recomenda-se agendamento)</p>
             </div>
           </div>
 
-          <div class="flex items-start gap-4 p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
-            <div class="w-10 h-10 rounded-full bg-laranjaVibrante/15 text-laranjaVibrante flex items-center justify-center text-xl flex-shrink-0">📞</div>
+          <div class="flex items-start gap-3.5 p-3.5 sm:p-4 bg-cremeQuente dark:bg-darkSurface rounded-item border border-areiaEscura/30 dark:border-terracota/20">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-laranjaVibrante/15 text-laranjaVibrante flex items-center justify-center text-lg sm:text-xl flex-shrink-0">📞</div>
             <div>
-              <h4 class="font-display font-bold text-base">WhatsApp e Telefone</h4>
-              <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura font-bold">(47) 99751-5499</p>
+              <h4 class="font-display font-bold text-sm sm:text-base">WhatsApp e Telefone</h4>
+              <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura font-bold">(47) 99751-5499</p>
             </div>
           </div>
         </div>
 
-        <div class="mt-8">
-          <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20quero%20agendar%20um%20serviço" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs inline-flex items-center gap-3 shadow-md">
+        <div class="mt-6 sm:mt-8">
+          <a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20quero%20agendar%20um%20serviço" target="_blank" rel="noopener" class="btn-cta bg-laranjaVibrante text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold uppercase tracking-wider text-xs inline-flex items-center justify-center gap-2.5 shadow-md w-full sm:w-auto">
             <span>Iniciar conversa no WhatsApp</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
@@ -688,16 +688,16 @@ tailwind.config = {
 
       <!-- Map & Location Box -->
       <div class="scroll-reveal">
-        <div class="aspect-square rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-xl bg-cremeQuente dark:bg-darkSurface flex flex-col justify-between p-8 text-center relative paw-pattern">
+        <div class="rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-xl bg-cremeQuente dark:bg-darkSurface flex flex-col justify-between p-6 sm:p-8 text-center relative paw-pattern">
           <div class="my-auto">
-            <div class="w-20 h-20 mx-auto mb-4 bg-terracota/10 dark:bg-terracota/20 rounded-full flex items-center justify-center pulse-glow">
-              <span class="text-4xl">🗺️</span>
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-terracota/10 dark:bg-terracota/20 rounded-full flex items-center justify-center pulse-glow">
+              <span class="text-3xl sm:text-4xl">🗺️</span>
             </div>
-            <h3 class="font-display text-2xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Bicho Solto Animal Care</h3>
-            <p class="font-body text-sm text-cinzaPet dark:text-areiaEscura mb-6 max-w-xs mx-auto">
-              Localização privilegiada no bairro Glória em Joinville. Fácil estacionamento e acesso.
+            <h3 class="font-display text-xl sm:text-2xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Bicho Solto Animal Care</h3>
+            <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-5 max-w-xs mx-auto">
+              Localização privileged no bairro Glória em Joinville. Fácil estacionamento e acesso.
             </p>
-            <a href="https://maps.google.com/?q=R.+Aquidaban,+730+-+Glória,+Joinville+-+SC" target="_blank" rel="noopener" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-6 py-3 rounded-xl font-bold uppercase text-xs tracking-wider inline-block">
+            <a href="https://maps.google.com/?q=R.+Aquidaban,+730+-+Glória,+Joinville+-+SC" target="_blank" rel="noopener" class="btn-primary border-2 border-terracota text-terracota dark:text-cremeQuente px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-xs tracking-wider inline-block">
               Abrir no Google Maps ➔
             </a>
           </div>
@@ -712,16 +712,16 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- FOOTER                       -->
 <!-- ============================ -->
-<footer class="py-12 px-4 md:px-[2cm]">
-  <div class="w-full max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-dobra p-8 md:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
-    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<footer class="py-8 sm:py-12 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-6 sm:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-center md:text-left">
       <div>
-        <p class="font-display text-2xl font-bold">Bicho Solto <span class="text-terracota italic">Animal Care</span></p>
-        <p class="font-body text-xs text-cinzaPet uppercase tracking-wider mt-1 font-semibold">R. Aquidaban, 730 - Glória, Joinville • (47) 99751-5499</p>
-        <p class="font-body text-xs text-cinzaPet mt-2">© 2026 Bicho Solto — Todos os direitos reservados.</p>
+        <p class="font-display text-xl sm:text-2xl font-bold">Bicho Solto <span class="text-terracota italic">Animal Care</span></p>
+        <p class="font-body text-[11px] sm:text-xs text-cinzaPet uppercase tracking-wider mt-1 font-semibold">R. Aquidaban, 730 - Glória, Joinville • (47) 99751-5499</p>
+        <p class="font-body text-[11px] sm:text-xs text-cinzaPet mt-1.5">© 2026 Bicho Solto — Todos os direitos reservados.</p>
       </div>
       <div class="flex items-center gap-4">
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-primary bg-terracota text-white px-6 py-2.5 rounded-full font-body text-xs uppercase tracking-wider font-bold shadow-sm">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-primary bg-terracota text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-body text-xs uppercase tracking-wider font-bold shadow-sm">
           ↑ Voltar ao topo
         </button>
       </div>
@@ -733,31 +733,31 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- MODAL DE AGENDAMENTO DIALOG  -->
 <!-- ============================ -->
-<dialog id="bookingModal" class="rounded-card p-0 shadow-2xl max-w-lg w-full bg-cremeQuente dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 text-marromPet dark:text-cremeQuente">
-  <div class="p-6 md:p-8">
-    <div class="flex items-center justify-between mb-6">
+<dialog id="bookingModal" class="rounded-card p-0 shadow-2xl max-w-lg w-[92vw] sm:w-full bg-cremeQuente dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 text-marromPet dark:text-cremeQuente">
+  <div class="p-5 sm:p-8">
+    <div class="flex items-center justify-between mb-5 sm:mb-6">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-laranjaVibrante/20 text-laranjaVibrante flex items-center justify-center text-xl">🐾</div>
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-laranjaVibrante/20 text-laranjaVibrante flex items-center justify-center text-lg sm:text-xl flex-shrink-0">🐾</div>
         <div>
-          <h3 class="font-display text-xl font-bold">Agendamento Bicho Solto</h3>
-          <p class="font-body text-xs text-cinzaPet">Insira as informações para agendar via WhatsApp</p>
+          <h3 class="font-display text-lg sm:text-xl font-bold">Agendamento Bicho Solto</h3>
+          <p class="font-body text-[11px] sm:text-xs text-cinzaPet">Insira as informações para agendar via WhatsApp</p>
         </div>
       </div>
-      <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-areiaEscura/20 dark:bg-darkSurface flex items-center justify-center font-bold text-sm hover:bg-terracota hover:text-white transition-colors">✕</button>
+      <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-areiaEscura/20 dark:bg-darkSurface flex items-center justify-center font-bold text-sm hover:bg-terracota hover:text-white transition-colors flex-shrink-0">✕</button>
     </div>
 
-    <form onsubmit="submitBookingForm(event)" class="space-y-4">
+    <form onsubmit="submitBookingForm(event)" class="space-y-3.5 sm:space-y-4">
       <div>
         <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do tutor</label>
-        <input type="text" id="modal-tutor" required placeholder="Ex: Mariana Silva" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
+        <input type="text" id="modal-tutor" required placeholder="Ex: Mariana Silva" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3.5 py-2.5 sm:py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-xs sm:text-sm">
       </div>
       <div>
         <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do pet e raça</label>
-        <input type="text" id="modal-pet" required placeholder="Ex: Mel (Golden Retriever)" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
+        <input type="text" id="modal-pet" required placeholder="Ex: Mel (Golden Retriever)" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3.5 py-2.5 sm:py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-xs sm:text-sm">
       </div>
       <div>
         <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Serviço desejado</label>
-        <select id="modal-servico" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-sm">
+        <select id="modal-servico" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3.5 py-2.5 sm:py-3 rounded-xl focus:outline-none focus:border-terracota font-body text-xs sm:text-sm">
           <option value="Banho completo">Banho completo (a partir de R$ 45)</option>
           <option value="Tosa completa / higiênica">Tosa completa / higiênica (a partir de R$ 80)</option>
           <option value="Banho e tosa VIP">Banho e tosa VIP</option>
@@ -765,17 +765,17 @@ tailwind.config = {
           <option value="Consulta de produtos de pet shop">Consulta de produtos de pet shop</option>
         </select>
       </div>
-      <div class="grid grid-cols-2 gap-3">
+      <div class="grid grid-cols-2 gap-2.5 sm:gap-3">
         <div>
           <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Data preferida</label>
-          <input type="date" id="modal-data" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-sm focus:outline-none focus:border-terracota">
+          <input type="date" id="modal-data" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2 sm:py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
         </div>
         <div>
           <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Horário</label>
-          <input type="time" id="modal-hora" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-sm focus:outline-none focus:border-terracota">
+          <input type="time" id="modal-hora" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2 sm:py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
         </div>
       </div>
-      <button type="submit" class="w-full btn-cta bg-laranjaVibrante text-white py-3.5 rounded-xl font-bold uppercase text-sm tracking-wider shadow-md flex items-center justify-center gap-2">
+      <button type="submit" class="w-full btn-cta bg-laranjaVibrante text-white py-3 sm:py-3.5 rounded-xl font-bold uppercase text-xs sm:text-sm tracking-wider shadow-md flex items-center justify-center gap-2">
         <span>Enviar agendamento no WhatsApp 🐾</span>
       </button>
     </form>
@@ -786,16 +786,16 @@ tailwind.config = {
 <!-- ============================ -->
 <!-- FLOATING WHATSAPP BUTTON     -->
 <!-- ============================ -->
-<a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20serviço" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 shadow-2xl group">
-  <div class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 active:scale-95 transition-transform pulse-glow">
-    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+<a href="https://wa.me/5547997515499?text=Olá%20Bicho%20Solto%2C%20gostaria%20de%20agendar%20um%20serviço" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 shadow-2xl group">
+  <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 active:scale-95 transition-transform pulse-glow">
+    <svg class="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
   </div>
 </a>
 
 <!-- TOAST CONTAINER -->
-<div id="toast" class="fixed bottom-6 left-6 z-50 bg-marromPet dark:bg-darkSurface text-white px-6 py-4 rounded-card shadow-2xl border border-terracota/40 flex items-center gap-3 max-w-md">
-  <span class="text-xl">✨</span>
-  <span id="toastMessage" class="font-body text-sm font-bold">Mensagem do sistema</span>
+<div id="toast" class="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 bg-marromPet dark:bg-darkSurface text-white px-4 sm:px-6 py-3 sm:py-4 rounded-card shadow-2xl border border-terracota/40 flex items-center gap-3 max-w-[90vw] sm:max-w-md">
+  <span class="text-lg sm:text-xl">✨</span>
+  <span id="toastMessage" class="font-body text-xs sm:text-sm font-bold">Mensagem do sistema</span>
 </div>
 
 <!-- ============================ -->
